@@ -14,11 +14,12 @@
 \usepackage{subfig}
 \usepackage{booktabs}
 \usepackage{url}
+\usepackage{comment}
 
 
 %%%%%%%%%%%%%%%%%%% TITLE AND AUTHORS %%%%%%%%%%%%%%%%%%%
 
-\title{IIC3633  Análisis \& Baselines proyecto de Recomendación multimodal de juegos de mesa}
+\title{IIC3633 Aplicación de recomendación grupal de juegos de mesa utilizando metadata}
 
 \author{\normalfont 
 Eduardo Salinas | 21624453 | \texttt{esalinasbarros@uc.cl} \\
@@ -34,17 +35,28 @@ Alfonso Badilla | 20640854 | \texttt{alfonso.badilla@uc.cl} \\
 \maketitle
 \newpage
 
-\section{Descripción del problema y justificación}
-Actualmente, el mercado de los juegos de mesa esta experimentando un crecimiento significativo, lo que implica una gran cantidad de juegos nuevos en el mercado cada día con una alta variedad de generas, temas y niveles de complejidad. Aunque existen clasificadores generales con reseñas, esto no toma en consideración los gustos personales. 
+\section{Pivoteo en la idea original del proyecto}
 
-Un sistema recomendador que sea capaz de recomendar juegos según fotos, descripciones sobre aspectos del juego, lenguaje natural e historial de gustos le da un aspecto de personalización al problema, mejorando la solución significativamente y potenciando la toma de decisiones a la hora de elegir un juego de mesa que encaje con lo esperado por el usuario. Además, dado el gran crecimiento del mercado de juegos un sistema como el explicado, sera cada vez mas utilizado y explotado para elegir juegos de calidad.
+El proyecto originalmente consistía en un sistema recomendador de juegos de mesa, que fuera capaz de hacer recomendaciones en base a imágenes y características descriptivas (metadata). La idea era que el sistema fuera multimodal y que pudiera recibir diferentes formatos de datos de entrada para dar recomendaciones válidas que al usuario le gustaran. 
 
-\section{Objetivos del proyecto}
-El objetivo del proyecto es crear un sistema recomendador de juegos de mesa, que sea capaz de hacer las recomendaciones en base a imágenes y características descriptivas (metadata) utilizando filtrado colaborativo. La idea es que el sistema sea multimodal y que pueda recibir diferentes formatos de datos de entrada para dar recomendaciones validas que al usuario le gustaran. Para esto, se utilizaran métricas de testeo de sistemas recomendadores como precisión, novelty y diversidad.
+Nosotros decidimos cambiar la idea original del proyecto por una que consideramos que podría llegar a ser más poderosa y que a nivel básico debería devolver resultados pronto. La nueva idea consiste en un sistema recomendador de juegos de mesa, que sea capaz de hacer recomendaciones para grupos en base a características descriptivas (metadata). La idea es que el sistema sea multimodal y que pueda recibir diferentes formatos de datos de entrada para dar recomendaciones válidas que al grupo de usuarios le gusten.
 
-\section{Analisis descriptivo de los datos}
-El dataset que se utilizara para este proyecto consta de 10 archivos diferentes, cada uno con información diferente sobre juegos de mesa. El punto de entrada sera el archivo \texttt{user\_ratings.csv} el cual consiste de 19 millones de filas. Por temas de procesamiento limitado de Google Collab, se utilizaran 50.000 filas para el entrenamiento  inicial. A continuación ser presenta un desglose de los diferentes archivos a utilizar:
 
+\section{Progreso en el desarrollo de la solución}
+
+Para esta entrega, nosotros hemos entrenado un recomendador sencillo utilizando el algoritmo de filtrado colaborativo. Para esto, utilizamos el dataset de BoardGameGeek que contiene información sobre juegos de mesa y ratings de usuarios. El dataset contiene 10 archivos diferentes, cada uno con información diferente sobre juegos de mesa. El punto de entrada fue el archivo \texttt{user\_ratings.csv} el cual consiste de 19 millones de filas. Por temas de procesamiento limitado de Google Collab (y más tarde de nuestro computador local), se utilizaron 50.000 filas para el entrenamiento inicial.
+
+% Actualizar esto cuando entrenemos el recomendador que use metadata!!!
+
+\section{Experimentación realizada y evaluación intemredia}
+A modo de experimentación se entrenaron 4 modelos de recomendación diferentes: ItemKNN, SVD, MostPopular y Random que luego se usarán como baseline. De estos, se utilizó ItemKNN para hacer una recomendación de juegos para grupos utilizando la ponderación utilitaria-aditiva (equivalente al promedio) la cual se usará como baseline para esta entrega. 
+
+\section{Analisis preliminar de los resultados}
+El recomendador que utiliza metadata lo comparamos con el de ItemKNN para varios grupos de usuarios de 5 integrantes. Para ellos encontramos los siguientes resultados:
+
+% Reemplazar las tablas cuando tengamos los resultados de los modelos.
+
+\begin{comment}
 \begin{itemize}
     \item \texttt{games.csv}: Este archivo contiene 22 atributos sobre los juegos calificados y contiene 22.000 juegos diferentes. Entre los atributos tenemos aspectos como la descripción del juego, que se podrían evaluar usando modelos de lenguaje, el año de publicación (que distribuye como se muestra en la figura \ref{fig:publishYear}), el rating promedio recibido, entre otros.
     \item \texttt{ratings\_distribution.csv}: Contiene el total de ratings en cada juego de mesa. En general estos ratings distribuyen como se ve en la figura \ref{fig:distribucionRatings}.
@@ -56,6 +68,7 @@ El dataset que se utilizara para este proyecto consta de 10 archivos diferentes,
     \item \texttt{publishers\_reduced.csv}: Contiene la información de las empresas que venden dichos juegos en formato flag binario. Solo se consideran las empresas que veden mas de 3 juegos.
     
 \end{itemize}
+
 
 \begin{figure}
     \centering
@@ -85,41 +98,25 @@ El dataset que se utilizara para este proyecto consta de 10 archivos diferentes,
     \label{fig:mecanicasComunes}
 \end{figure}
 
-\section{Implementación de modelos de referencia} 
-Para tener una idea basica de las metricas de recomendación actuales, entrenamos 4 modelos y obtuvimos las siguientes metricas.
-\begin{table}[h!]
-\centering
-\begin{tabular}{|l|c|c|c|c|}
-\hline
-\textbf{Modelo}    & \textbf{MAE}   & \textbf{RMSE}  & \textbf{MAP}     & \textbf{NDCG}        \\ \hline
-ItemKNN            & 7.1102         & 7.1102         & 1.15e-4          & 5.873e-5             \\ \hline
-SVD                & 7.2539         & 7.2539         & 1.54e-4          & 5.873e-5             \\ \hline
-MostPopular        & -              & -              & 0.077            & 0.057                \\ \hline
-Random             & 2.827          & 3.45           & -                & -                    \\ \hline
-\end{tabular}
-\caption{Resultados de diferentes modelos de recomendación}
-\end{table}
-\newline
-Se pueden observar errores relativamente altos para los modelos ItemKNN y SVD y metricas de precision bastante bajas. Los otros algoritmos tampoco están mostrando un desempeño muy alto, lo que hace referencia a una falta de calidad en el dataset. Dicho esto, si bien hay una falta de metricas, se puede observar que MostPopular y Random funcionan mejor que ItemKNN y SVD.
+\end{comment}
 
+\section{Problemas identificados durante el proceso} 
 
+Previo al pivoteo, los principales problemas que enfrentamos fueron la falta de recursos computacionales para entrenar modelos de recomendación que utilizan imágenes y la falta de experiencia en el manejo de datos de imágenes. % Creo que teníamos un problema más pero no me acuerdo cuál era.
 
+Luego del pivoteo, los problemas que enfrentamos fueron... % Agregar los problemas que enfrentamos luego del pivoteo.
 
-\section{Planificación para la etapa Midterm} 
-El trabajo que realizaremos se espera que se distribuya en dos partes:
-\begin{enumerate}
-    \item \textbf{Aprovechar metadata cualitativo:} Primero se hará una comparación de los modelos de baseline con uno que incorpore el metadata de las tablas adicionales del dataset entregado, y se verá si se logra ganancia de precisión y otras métricas considerando ese metadata. Se espera tener esto listo entre la segunda y tercera entrega, con al menos un avance en la segunda, y se debería evaluar en función de la robustez de la utilización del metadata relevante para entrenar modelos, es decir si se utilizó el metadata de una cantidad de formas suficientes para entrenar un modelo suficientemente bueno.
-    \item \textbf{Aprovechar imágenes y descripción de los juegos:} Luego se repetirá este experimento pero agregando además como metadata las imágenes y la descripción relacionados con los respectivos juegos de mesa, considerando también performance en tiempo del modelo, para revisar si se obtiene ganancia suficiente de considerar estos datos dentro del metadata cualitativo del modelo (se agragecería feedback especialmente en la factibilidad y forma de hacer esta parte del trabajo). Si se realizara, se haría para la tercera entrega, y se debería evaluar en función de la profundidad de la investigación relacionada con la aplicación de estas formas de metadata.
-\end{enumerate}
+\section{Revisión del plan propuesto en la etapa anterior y justificación de ajustes} 
 
+En general, el pivoteo fue\dots %Qué tal nos fue con el pivoteo?
 
-\section{Bibliografía relevante}
+Para la próxima entrega, planeamos hacer que cada usuario pueda elegir que cada una de las metadatas que le corresponden tenga un peso distinto en la recomendación. Esto lo haremos \dots %Dejar alguna idea de cómo lo haremos escrita.
 
+\section{Anexo: actualización de propuesta}
 \begin{itemize}
-    \item En el artículo "Addressing the user cold start with cross-domain collaborative filtering: exploiting item metadata in matrix factorization" \url{https://link.springer.com/article/10.1007/s11257-018-9217-6} se utiliza filtrado colaborativo y se busca reducir el efecto del "cold start" de un usuario nuevo utilizando el metadata de los ítems de la plataforma.
-    \item En el artículo "Using geospatial metadata to boost collaborative filtering" \url{https://dl.acm.org/doi/abs/10.1145/2507157.2507201} se utiliza metadata de espacio para recomendar ítems del tipo fotos junto con filtrado colaborativo.
+    \item Deben agregar unos 3 baselines de métodos para recomendar grupos
+    \item Deben actualizar la metodología de evaluación indicando métricas especificas para recomendación a grupos, no pueden hacer la misma evaluación que recomendar a individuos
 \end{itemize}
-
 
 \end{document}
 
