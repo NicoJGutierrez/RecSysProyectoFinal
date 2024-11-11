@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.11.3)  9 NOV 2024 17:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.11.3)  11 NOV 2024 11:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -265,20 +265,25 @@ File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 
 
 pdfTeX warning: pdflatex (file pdftex.map): cannot open font map file
-] [2] Excluding 'comment' comment. [3] (./acl2023.aux) ) 
+] [2]
+Overfull \hbox (22.26671pt too wide) in paragraph at lines 63--69
+ [][] 
+ []
+
+Excluding 'comment' comment. [3] [4] (./acl2023.aux) ) 
 Here is how much of TeX's memory you used:
- 4792 strings out of 480247
- 77353 string characters out of 5896106
- 368627 words of memory out of 5000000
- 22687 multiletter control sequences out of 15000+600000
- 478099 words of font info for 52 fonts, out of 8000000 for 9000
+ 4806 strings out of 480247
+ 77594 string characters out of 5896106
+ 370635 words of memory out of 5000000
+ 22700 multiletter control sequences out of 15000+600000
+ 479828 words of font info for 57 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 69i,7n,79p,687b,304s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/nico/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk> </home/nico/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1095.600pk> </home/nico/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/nico/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1095.600pk> </home/nico/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1200.600pk> </home/nico/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/nico/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk>
-Output written on acl2023.pdf (3 pages, 61886 bytes).
+ 69i,9n,79p,687b,304s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/nico/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk> </home/nico/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk> </home/nico/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1095.600pk> </home/nico/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/nico/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1095.600pk> </home/nico/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1200.600pk> </home/nico/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/nico/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk>
+Output written on acl2023.pdf (4 pages, 72817 bytes).
 PDF statistics:
- 229 PDF objects out of 1000 (max. 8388607)
- 36 compressed objects within 1 object stream
+ 267 PDF objects out of 1000 (max. 8388607)
+ 42 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
