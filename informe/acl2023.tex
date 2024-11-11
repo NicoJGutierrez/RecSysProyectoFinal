@@ -49,10 +49,28 @@ Para esta entrega, nosotros hemos entrenado un recomendador sencillo utilizando 
 % Actualizar esto cuando entrenemos el recomendador que use metadata!!!
 
 \section{Experimentación realizada y evaluación intemredia}
-A modo de experimentación se entrenaron 4 modelos de recomendación diferentes: ItemKNN, SVD, MostPopular y Random que luego se usarán como baseline. De estos, se utilizó ItemKNN para hacer una recomendación de juegos para grupos utilizando la ponderación utilitaria-aditiva (equivalente al promedio) la cual se usará como baseline para esta entrega. 
+A modo de experimentación se entrenaron 4 modelos de recomendación diferentes: ItemKNN, SVD, MostPopular y Random que luego se usarán como baseline. 
+De estos, se utilizó ItemKNN para hacer una recomendación de juegos para grupos utilizando la ponderación utilitaria-aditiva (equivalente al promedio) 
+la cual se usará como baseline para esta entrega. Ademas, se integro un modelo de la libreria \texttt{fastFM} para crear un modelo capaz de recibir metadata y dar recomendaciones.
+Para este caso particular, se entreno el modelo agregando features a items los cuales consistian en las categorias en las que se clasificaba el item a recomendar. Las features que se utilizaron 
+consistian en la categoria del juego y la mecanica de este. Estos valores se convirtieron desde un flag binario a una representación vectorial como embeddings.
 
 \section{Analisis preliminar de los resultados}
 El recomendador que utiliza metadata lo comparamos con el de ItemKNN para varios grupos de usuarios de 5 integrantes. Para ellos encontramos los siguientes resultados:
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        \textbf{Modelo} & \textbf{Recall@10} & \textbf{Precision@10} & \textbf{NDCG@10} & \textbf{RMSE} \\ \hline
+        ItemKNN & - & 0.000386 & 0.000128 & 7.13 \\ \hline
+        fastFM \& metadata & 0.107 & 0.0056 & - & - \\ \hline
+    \end{tabular}
+    \caption{Resultados preliminares de recomendaciones para grupos}
+    \label{tab:resultados_preliminares}
+\end{table}
+
+Si bien no todas las metricas estan incluidas, se puede observar que el modelo que utiliza metadata tiene un mejor recall y precision que el modelo basado en itemKNN.
 
 % Reemplazar las tablas cuando tengamos los resultados de los modelos.
 
@@ -104,7 +122,11 @@ El recomendador que utiliza metadata lo comparamos con el de ItemKNN para varios
 
 Previo al pivoteo, los principales problemas que enfrentamos fueron la falta de recursos computacionales para entrenar modelos de recomendación que utilizan imágenes y la falta de experiencia en el manejo de datos de imágenes. % Creo que teníamos un problema más pero no me acuerdo cuál era.
 
-Luego del pivoteo, los problemas que enfrentamos fueron... % Agregar los problemas que enfrentamos luego del pivoteo.
+Luego del pivoteo, los problemas que enfrentamos fueron:
+\begin{itemize}
+    \item Falta de obtención de metricas para comparar modelos que usan metadata.
+    \item Poca flexibilidad de los modelos que utilizan metadata para recibir diferentes formatos de entrada.
+\end{itemize}
 
 \section{Revisión del plan propuesto en la etapa anterior y justificación de ajustes} 
 
