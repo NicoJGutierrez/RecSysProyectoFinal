@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1731334198 "/home/nico/sysrec/RecSysProyectoFinal/informe/acl2023.tex" "acl2023.pdf" "acl2023" 1731334198
+["pdflatex"] 1731339580 "/home/nico/sysrec/RecSysProyectoFinal/informe/acl2023.tex" "acl2023.pdf" "acl2023" 1731339580
   "/etc/texmf/web2c/texmf.cnf" 1730669674 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/nico/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk" 1730775688 28952 f9034ed57c54b4df4609c8267a2ce77f ""
   "/home/nico/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk" 1730775692 40112 94cffefc318294622856680759bdab39 ""
@@ -10,7 +10,7 @@
   "/home/nico/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1200.600pk" 1730775737 24132 19512388ed1bfda21795f53070db931d ""
   "/home/nico/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk" 1730775436 12644 f53432503cf2102f77312f31627110f3 ""
   "/home/nico/.texlive2021/texmf-var/web2c/pdftex/pdflatex.fmt" 1730679348 1405755 41d785b8e3ac52dd524d1268b05cb20d ""
-  "/home/nico/sysrec/RecSysProyectoFinal/informe/acl2023.tex" 1731334197 8352 c41781b607b28f97a03259eccaeba697 ""
+  "/home/nico/sysrec/RecSysProyectoFinal/informe/acl2023.tex" 1731339579 8352 c41781b607b28f97a03259eccaeba697 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx1095.tfm" 1136768653 3584 21b378cca2e40816b0e6d74a4dc98f04 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx1440.tfm" 1136768653 3584 13049b61b922a28b158a38aeff75ee9b ""
@@ -75,8 +75,8 @@
   "/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty" 1635798903 56029 3f7889dab51d620aa43177c391b7b190 ""
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
-  "acl2023.aux" 1731334198 1244 eea4d52b98c770ba43b71d1730c00f19 "pdflatex"
-  "acl2023.tex" 1731334197 8352 c41781b607b28f97a03259eccaeba697 ""
+  "acl2023.aux" 1731339580 1244 eea4d52b98c770ba43b71d1730c00f19 "pdflatex"
+  "acl2023.tex" 1731339579 8352 c41781b607b28f97a03259eccaeba697 ""
   (generated)
   "acl2023.aux"
   "acl2023.log"
