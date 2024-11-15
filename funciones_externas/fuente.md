@@ -1,5 +1,8 @@
-## Fuente:
-https://github.com/barnap/group-recommenders-offline-evaluation
+## Fuente
+<https://github.com/barnap/group-recommenders-offline-evaluation>
+
+## Dataset
+<https://www.kaggle.com/datasets/threnjen/board-games-database-from-boardgamegeek/data>
 
 # Documentación de Uso
 
@@ -15,7 +18,7 @@ pip install pandas numpy scipy
 
 Las estrategias de agregación se encuentran en el archivo `aggregators.py`. Estas estrategias se utilizan para generar recomendaciones grupales basadas en diferentes métodos de agregación.
 
-### Ejemplo de Uso:
+### Ejemplo de Uso
 
 ```python
 from aggregation_strategies.aggregators import AggregationStrategy
@@ -36,9 +39,10 @@ print(recommendations)
 ```
 
 ## 2. Funciones Utilitarias
+
 Las funciones utilitarias se encuentran en el archivo utility_functions.py. Estas funciones se utilizan para preprocesar datos y generar recomendaciones para todos los grupos.
 
-### Ejemplo de Uso:
+### Ejemplo de Uso
 
 ```python
 from utility_functions import generate_group_recommendations_forall_groups
@@ -64,9 +68,11 @@ print(group_recommendations)
 ```
 
 ## 3. Evaluadores de Métricas
+
 Los evaluadores de métricas se encuentran en el archivo metric_evaluators.py. Estas clases se utilizan para evaluar la calidad de las recomendaciones grupales.
 
-### Ejemplo de Uso:
+### Ejemplo de Uso
+
 ```python
 from evaluation_metrics.metric_evaluators import MetricEvaluator
 
