@@ -1,0 +1,20 @@
+ 30-11-2024 17:54:21:927 [pid=5873 tid=5873] ERROR  0:140 unable to load,  liburcu-bp.so.6 
+
+ 30-11-2024 17:54:21:927 [pid=5873 tid=5873] ERROR  0:140 unable to load,  liburcu-bp.so.1 
+
+ 30-11-2024 17:54:21:927 [pid=5873 tid=5873] WARN   0:168 failed to open /proc/driver/nvidia-fs/devcount  error: No such file or directory
+ 30-11-2024 17:54:21:927 [pid=5873 tid=5873] NOTICE  cufio-drv:727 running in compatible mode
+ 30-11-2024 17:54:21:927 [pid=5873 tid=5873] ERROR  cufio-plat:98 cannot open path /sys/bus/pci/devices/0000:01:00.0/resource No such file or directory
+ 30-11-2024 17:54:21:927 [pid=5873 tid=5873] WARN   cufio-plat:431 GPU index 0 NVIDIA GeForce RTX 3050 Laptop GPU: Model Not Supported
+ 30-11-2024 17:54:21:927 [pid=5873 tid=5873] WARN   cufio-udev:168 failed in udev device create: /sys/bus/pci/devices/0000:01:00.0
+ 30-11-2024 17:54:21:989 [pid=5873 tid=5873] ERROR  cufio-topo-udev:431 no device entries present in platform topology
+ 30-11-2024 18:09:42:227 [pid=17330 tid=17330] ERROR  0:140 unable to load,  liburcu-bp.so.6 
+
+ 30-11-2024 18:09:42:228 [pid=17330 tid=17330] ERROR  0:140 unable to load,  liburcu-bp.so.1 
+
+ 30-11-2024 18:09:42:228 [pid=17330 tid=17330] WARN   0:168 failed to open /proc/driver/nvidia-fs/devcount  error: No such file or directory
+ 30-11-2024 18:09:42:228 [pid=17330 tid=17330] NOTICE  cufio-drv:727 running in compatible mode
+ 30-11-2024 18:09:42:228 [pid=17330 tid=17330] ERROR  cufio-plat:98 cannot open path /sys/bus/pci/devices/0000:01:00.0/resource No such file or directory
+ 30-11-2024 18:09:42:228 [pid=17330 tid=17330] WARN   cufio-plat:431 GPU index 0 NVIDIA GeForce RTX 3050 Laptop GPU: Model Not Supported
+ 30-11-2024 18:09:42:228 [pid=17330 tid=17330] WARN   cufio-udev:168 failed in udev device create: /sys/bus/pci/devices/0000:01:00.0
+ 30-11-2024 18:09:42:290 [pid=17330 tid=17330] ERROR  cufio-topo-udev:431 no device entries present in platform topology
