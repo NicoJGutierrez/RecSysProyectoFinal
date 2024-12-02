@@ -10,7 +10,7 @@ def parse_group_data(groups_df):
         recommendations = ast.literal_eval(row['recommendations'])
         parsed_data.append((group_members, recommendations))
     
-    print(f"\nTotal groups parsed: {len(parsed_data)}")
+    print(f"\nTotal: {len(parsed_data)}")
     return parsed_data
 
 def calculate_relevance(train_df, user_id, item_id):
@@ -31,15 +31,13 @@ def calculate_group_metrics(parsed_data, train_df, k=5, threshold=5):
     total_hits = 0
     total_possible_hits = 0
     
-    # Keep track of all recommended items
     all_recommended_items = set()
     total_recommendations = 0
     
     for i, (group_members, recommendations) in enumerate(parsed_data):
-        print(f"\rProcessing Group {i+1}/{total_groups}", end="")
+        print(f"\rProcesando {i+1}/{total_groups}", end="")
         recommended_items = recommendations[:k]
         
-        # Add to global set of recommended items
         all_recommended_items.update(recommended_items)
         total_recommendations += len(recommended_items)
         
@@ -87,7 +85,6 @@ def calculate_group_metrics(parsed_data, train_df, k=5, threshold=5):
         total_ndcg += ndcg
         total_relevance += np.mean(group_relevance) if group_relevance else 0
     
-    # Calculate global diversity
     total_diversity = len(all_recommended_items) / total_recommendations
     
     avg_metrics = {
@@ -95,7 +92,7 @@ def calculate_group_metrics(parsed_data, train_df, k=5, threshold=5):
         "average_recall": total_recall / total_groups,
         "average_ndcg": total_ndcg / total_groups,
         "average_relevance": total_relevance / total_groups,
-        "average_diversity": total_diversity,  # This is now global diversity
+        "average_diversity": total_diversity,  
     }
     
     return avg_metrics
