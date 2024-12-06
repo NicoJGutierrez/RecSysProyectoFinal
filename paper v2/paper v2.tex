@@ -140,17 +140,46 @@ The dataset that will be used for this project has 10 different files, each one 
 
 \section{Methodology}
 
-The methodology for this project is divided into three main stages: data preprocessing, group making, and recommendation. The first stage consists of reducing the data and selecting the most relevant attributes. The second stage consists of grouping the games based on their characteristics, and the third stage consists of recommending games to groups of players based on their preferences.
+The methodology for this project is divided into three main stages: data preprocessing, group making, and recommendation. 
 
 \subsection{Data preprocessing}
+The first stage consists of reducing the dataset by not picking items without interactions and then dividing the...
+
+% Mostrar gráfico de las clases de usuarios y clases de ítems, además de mostrar cuantos no valen la pena.
 
 \subsection{Group making}
 
-\subsection{Recommendation}
+% Insertar referencia y citar apropiadamente el trabajo.
+The second stage consists of grouping the users based on their characteristics by using a correlation matrix. The function used is an adaptation of the one used in the "" work, which is based on the cosine similarity between the users. The function is as follows:
 
-\section{Sensitivity Analysis}
+% Arreglar función
+\begin{equation}
+    %\text{similarity}(u, v) = \frac{\sum_{i=1}^{n} u_i \cdot v_i}{\sqrt{\sum_{i=1}^{n} u_i^2} \cdot \sqrt{\sum_{i=1}^{n} v_i^2}}
+\end{equation}
+
+
+\subsection{Recommendation}
+The third stage consists of recommending games to groups of players based on their preferences. Since the recommendations are supposed to be made to groups, the preferences of the group are calculated using a variety of methods, that can be described as follows: 
+\begin{enumerate}
+    \item Simple average: The preferences of the group are calculated as the simple average of the preferences of the individual players.
+    \item Least misery: The preferences of the group are calculated as the minimum of the preferences of the individual players.
+    \item ... % asegurarse que esto está al día con lo que presentemos al final del trabajo
+\end{enumerate}
 
 \section{Results}
+
+To evaluate the results of our model, we will compare it to most popular as a sanity check, to iknn applied to the same dataset and to SVD applied to the same dataset. % Agregar AGREE si logramos hacerlo funcionar ahora que tenemos menos datos. 
+
+The metrics that will be used to evaluate the performance of each model are the following:
+
+\begin{itemize}
+    \item Precision at k: This metric measures the proportion of recommended items that are relevant to the user, where relevance is defined as the items that the user has interacted with.
+    \item Recall at k: This metric measures the proportion of relevant items that are recommended to the user.
+    \item F1 score: This metric is the harmonic mean of precision and recall, and is used to measure the overall performance of the model.
+\end{itemize}
+
+
+\section{Sensitivity Analysis}
 
 \section{Conclusions}
 
