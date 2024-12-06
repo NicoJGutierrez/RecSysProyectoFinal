@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.11.3)  29 NOV 2024 23:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.11.3)  6 DEC 2024 19:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -454,85 +454,80 @@ Package pdftex.def Info: mecanicasComunes.png  used on input line 136.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [2pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
+[2pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.238 
+l.172 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.238 
+l.172 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.238 
+l.172 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.238 
+l.172 
        <./publishYear.png> <./distribucionRatings.png> <./tematicasComunes.png> <./mecanicasComunes.png>]
 
-Package natbib Warning: Citation `Samuel59' on page 3 undefined on input line 242.
+Package natbib Warning: Citation `Samuel59' on page 3 undefined on input line 271.
 
 
-Package natbib Warning: Citation `Samuel59' on page 3 undefined on input line 244.
+Package natbib Warning: Citation `Samuel59' on page 3 undefined on input line 273.
 
 
-Package natbib Warning: Citation `kearns89' on page 3 undefined on input line 245.
+Package natbib Warning: Citation `kearns89' on page 3 undefined on input line 274.
 
 
-Package natbib Warning: Citation `Samuel59' on page 3 undefined on input line 245.
+Package natbib Warning: Citation `Samuel59' on page 3 undefined on input line 274.
 
 
-Package natbib Warning: Citation `mitchell80' on page 3 undefined on input line 245.
+Package natbib Warning: Citation `mitchell80' on page 3 undefined on input line 274.
 
 
-Package natbib Warning: Citation `MachineLearningI' on page 3 undefined on input line 247.
+Package natbib Warning: Citation `MachineLearningI' on page 3 undefined on input line 276.
 
 
-LaTeX Warning: Reference `author info' on page 3 undefined on input line 251.
+LaTeX Warning: Reference `author info' on page 3 undefined on input line 280.
 
 
-Package natbib Warning: Citation `Samuel59' on page 3 undefined on input line 257.
+Package natbib Warning: Citation `Samuel59' on page 3 undefined on input line 286.
 
 
-Package natbib Warning: Citation `langley00' on page 3 undefined on input line 258.
+Package natbib Warning: Citation `langley00' on page 3 undefined on input line 287.
 
 
-Package natbib Warning: Citation `Newell81' on page 3 undefined on input line 258.
+Package natbib Warning: Citation `Newell81' on page 3 undefined on input line 287.
 
 
-Package natbib Warning: Citation `DudaHart2nd' on page 3 undefined on input line 259.
+Package natbib Warning: Citation `DudaHart2nd' on page 3 undefined on input line 288.
 
 
-Package natbib Warning: Citation `MachineLearningI' on page 3 undefined on input line 259.
+Package natbib Warning: Citation `MachineLearningI' on page 3 undefined on input line 288.
 
 
-Package natbib Warning: Citation `mitchell80' on page 3 undefined on input line 260.
+Package natbib Warning: Citation `mitchell80' on page 3 undefined on input line 289.
 
 
-Package natbib Warning: Citation `kearns89' on page 3 undefined on input line 260.
+Package natbib Warning: Citation `kearns89' on page 3 undefined on input line 289.
 
-LaTeX Font Info:    Trying to load font information for OMS+ptm on input line 270.
+LaTeX Font Info:    Trying to load font information for OMS+ptm on input line 299.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 270.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 299.
 
 
-Package natbib Warning: Citation `langley00' undefined on input line 276.
+Package natbib Warning: Citation `langley00' undefined on input line 305.
 
 No file "paper v2".bbl.
 
 Package natbib Warning: There were undefined citations.
 
-[3
-
-] (./paper v2.aux)
+[3] (./paper v2.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -540,18 +535,18 @@ Package rerunfilecheck Info: File `"paper v2".out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 12133 strings out of 480247
- 193267 string characters out of 5896106
+ 12146 strings out of 480247
+ 193375 string characters out of 5896106
  526758 words of memory out of 5000000
  29678 multiletter control sequences out of 15000+600000
- 497620 words of font info for 174 fonts, out of 8000000 for 9000
+ 497977 words of font info for 180 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  60i,11n,69p,1054b,431s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on "paper v2.pdf" (3 pages, 287398 bytes).
+Output written on "paper v2.pdf" (3 pages, 289024 bytes).
 PDF statistics:
- 97 PDF objects out of 1000 (max. 8388607)
- 69 compressed objects within 1 object stream
- 21 named destinations out of 1000 (max. 500000)
+ 102 PDF objects out of 1000 (max. 8388607)
+ 74 compressed objects within 1 object stream
+ 25 named destinations out of 1000 (max. 500000)
  52757 words of extra memory for PDF output out of 61914 (max. 10000000)
 
