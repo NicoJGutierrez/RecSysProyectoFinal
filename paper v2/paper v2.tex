@@ -78,13 +78,13 @@ The implementation employs Python and the scikit-learn library, offering an effi
 \end{abstract}
 
 \section{Motivation and state of the art}
-\label{Motivation}
 
 Board games have been a popular form of entertainment for centuries, and their popularity has only increased in recent years. Even as digital games have become more prevalent, board games have remained a favorite pastime for many people, and the market for board games has grown significantly giving rise to plataforms such as Board Game Geek (BGG). This website is a popular platform for board game enthusiasts, where users can rate and review games, as well as access information about them.
 
+\subsection{State of the art and related work}
+
 This plataform has a vast amount of data that has been used in the past to create recommendation systems. For example, 
-%\cite{DBLP:journals/corr/abs-2006-07053} 
-proposed a recommendation system for board games based on user ratings, using a collaborative filtering approach. However, this approach does not take into account the characteristics of many of the games, that are supposed to be played in groups. As such, we propose a group recommendation system to make recommendations tailored to groups of players.
+github user richengo \cite{richengo2024} proposed a recommendation system for board games based on user ratings, using a collaborative filtering approach. However, this approach does not take into account the characteristics of many of the games, that are supposed to be played in groups. As such, we propose a group recommendation system to make recommendations tailored to groups of players.
 
 Another example of group recommendation systems is the work of %\cite{DBLP:journals/corr/abs-2006-07053}
 , who proposed a group recommendation system for tourism and movies\footnote{This work is hosted on a github repo and is intended to be used as a basic tutorial.}.
@@ -96,7 +96,7 @@ We propose a refined version of that last system, using metadata-centric cluster
 
 \section{Data analysis}
 
-The dataset that will be used for this project has 10 different files, each one tith different information about board games. The main file is \texttt{user\_ratings.csv}, which contains 19 million rows. Due to the limited processing power of Google Collab, we will use only 50,000 rows for the initial training. The other files are:
+The dataset that will be used for this project has 10 different files, each one tith different information about board games. The main file is \texttt{user\_ratings.csv}, which contains 19 million rows. Due to the limited processing power of Google Collab and our own local machines, we will use a reduced set of items and users for this work. The other files are:
 
 \begin{itemize}
     \item \texttt{games.csv}: This file contains 22 attributes about the rated games and includes 22,000 different games. Among the attributes, we have aspects such as the game description, which could be evaluated using language models, the year of publication (which distributes as shown in figure \ref{fig:publishYear}), the average rating received, among others.
@@ -104,7 +104,7 @@ The dataset that will be used for this project has 10 different files, each one 
     \item \texttt{temes.csv}: Contains the themes of each game as a binary flag. The 50 most common themes can be seen in the graph in figure \ref{fig:tematicasComunes}.
     \item \texttt{mechanics.csv}: Contains the game mechanics as a binary flag. The 50 most common mechanics can be seen in the graph in figure \ref{fig:mecanicasComunes}.
     \item \texttt{subcategories.csv}: Contains the subcategories of each game in binary flag format.
-    \item \texttt{artists\_reduced.csv}: Contains information about which artist created a certain game in binary flag format. Only artists with more than 3 games created are considered.
+    \item \texttt{artists\_reduced.csv}: Contains information about which artist created a certain game in binary flag format. Only artists with more than 3 games created will be considered.
     \item \texttt{designer\_reduced.csv}: Contains information about which designer designed a certain game in binary flag format. Only designers with more than 3 games created are considered.
     \item \texttt{publishers\_reduced.csv}: Contains information about the companies that sell these games in binary flag format. Only companies that sell more than 3 games are considered.
     
