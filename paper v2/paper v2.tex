@@ -207,10 +207,18 @@ The second stage consists of grouping the users based on their characteristics b
 \subsection{Recommendation}
 The third stage consists of recommending games to groups of players based on their preferences. Since the recommendations are supposed to be made to groups, the preferences of the group are calculated using a variety of methods, that can be described as follows:
 \begin{enumerate}
-    \item Simple average: The preferences of the group are calculated as the simple average of the preferences of the individual players.
-    \item Least misery: The preferences of the group are calculated as the minimum of the preferences of the individual players.
-    \item ... % asegurarse que esto está al día con lo que presentemos al final del trabajo
+    \item Simple average: The preferences of the group are calculated as the simple average of the preferences of the individual players based on a top-100 recommendation list prior to the group formation. This can be done with the following formula:
+    \begin{equation}
+        \text{avg\_score\_item} = \frac{\sum_{i=1}^{n} \text{user\_rating}_i}{n}
+    \end{equation}
+    with $n$ being the number of users in the group, and $u_i$ being the rating of the $i$-th user given an item.
+    % \item Least misery: The preferences of the group are calculated as the minimum of the preferences of the individual players.
+    % \item ... % asegurarse que esto está al día con lo que presentemos al final del trabajo
 \end{enumerate}
+
+Given the method explained above, we assign the score to each of the items in the top-100 recommedation list of each user on a group. Then we create a new list of items combining the top-100 recommendation lists of each user on a group, and we extract the top-n items with the highest average scores. Note that for this to work properly, if two users have a matching item in their top-100 recommendation list, the item will only be included as the sum of the average rankings by the users in the group.
+
+
 
 \section{Results}
 
@@ -228,6 +236,9 @@ The metrics that will be used to evaluate the performance of each model are the 
     \item Fairness: This metric evaluates the fairness of the recommendations, ensuring that the recommendations are unbiased and equitable.
     \item Serendipity: This metric measures the likelihood of the recommendations to pleasantly surprise the user, enhancing the user experience.
 \end{itemize}
+
+For each metric, we used a cumulative avarage of the results of 300 different group formations, on which we applied the common formulas for each metric. Meaning that for each group, we calculated all of the metrics mentioned above, then we added them and divided by the number of groups.
+\newline 
 
 As is shown on table \ref{tab:resultados-modelos}, the LightFM model outperforms the other models in almost all metrics. This is to be expected, since its using not only user-item interactions but also metadata to make recommendations. 
 The metadata recommendation allows for the model to recommend similiar items to two or more users that have similar preferences even if they have not interacted with any items in common. This is specially helpful when 
