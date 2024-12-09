@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.11.3)  9 DEC 2024 19:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.11.3)  9 DEC 2024 19:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -474,17 +474,17 @@ Underfull \hbox (badness 1231) in paragraph at lines 107--108
 []\OT1/pcr/m/n/10 artists[]reduced.csv\OT1/ptm/m/n/10 (+20) : Con-tains in-for-ma-tion
  []
 
-<publishYear.png, id=44, 939.51pt x 582.175pt>
+<publishYear.png, id=46, 939.51pt x 582.175pt>
 File: publishYear.png Graphic file (type png)
 <use publishYear.png>
 Package pdftex.def Info: publishYear.png  used on input line 115.
 (pdftex.def)             Requested size: 211.3883pt x 130.98372pt.
-<distribucionRatings.png, id=45, 966.61125pt x 566.115pt>
+<distribucionRatings.png, id=47, 966.61125pt x 566.115pt>
 File: distribucionRatings.png Graphic file (type png)
 <use distribucionRatings.png>
 Package pdftex.def Info: distribucionRatings.png  used on input line 122.
 (pdftex.def)             Requested size: 211.3883pt x 123.8028pt.
-<tematicasComunes.png, id=46, 939.51pt x 717.68124pt>
+<tematicasComunes.png, id=48, 939.51pt x 717.68124pt>
 File: tematicasComunes.png Graphic file (type png)
 <use tematicasComunes.png>
 Package pdftex.def Info: tematicasComunes.png  used on input line 129.
@@ -492,7 +492,7 @@ Package pdftex.def Info: tematicasComunes.png  used on input line 129.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<mecanicasComunes.png, id=47, 939.51pt x 791.95876pt>
+<mecanicasComunes.png, id=49, 939.51pt x 791.95876pt>
 File: mecanicasComunes.png Graphic file (type png)
 <use mecanicasComunes.png>
 Package pdftex.def Info: mecanicasComunes.png  used on input line 136.
@@ -517,17 +517,17 @@ l.153
                                                   \__shipout_drop_firstpage_...
 l.153 
        <./publishYear.png> <./distribucionRatings.png> <./tematicasComunes.png> <./mecanicasComunes.png>]
-<ReviewsPorJuego.png, id=73, 620.7993pt x 396.0396pt>
+<ReviewsPorJuego.png, id=75, 620.7993pt x 396.0396pt>
 File: ReviewsPorJuego.png Graphic file (type png)
 <use ReviewsPorJuego.png>
 Package pdftex.def Info: ReviewsPorJuego.png  used on input line 160.
 (pdftex.def)             Requested size: 211.3883pt x 134.85109pt.
-<reviewsPorUsuario.png, id=75, 627.3036pt x 396.0396pt>
+<reviewsPorUsuario.png, id=77, 627.3036pt x 396.0396pt>
 File: reviewsPorUsuario.png Graphic file (type png)
 <use reviewsPorUsuario.png>
 Package pdftex.def Info: reviewsPorUsuario.png  used on input line 167.
 (pdftex.def)             Requested size: 211.3883pt x 133.45514pt.
-<reviewsPorUsuario2.png, id=77, 627.3036pt x 396.0396pt>
+<reviewsPorUsuario2.png, id=79, 627.3036pt x 396.0396pt>
 File: reviewsPorUsuario2.png Graphic file (type png)
 <use reviewsPorUsuario2.png>
 Package pdftex.def Info: reviewsPorUsuario2.png  used on input line 176.
@@ -536,15 +536,12 @@ Package pdftex.def Info: reviewsPorUsuario2.png  used on input line 176.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<reviewsPorUsuarioFinal.png, id=80, 620.7993pt x 396.0396pt>
+<reviewsPorUsuarioFinal.png, id=82, 620.7993pt x 396.0396pt>
 File: reviewsPorUsuarioFinal.png Graphic file (type png)
 <use reviewsPorUsuarioFinal.png>
 Package pdftex.def Info: reviewsPorUsuarioFinal.png  used on input line 187.
 (pdftex.def)             Requested size: 211.3883pt x 134.85109pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<ReviewsPorJuegoFinal.png, id=81, 615.0177pt x 396.0396pt>
+<ReviewsPorJuegoFinal.png, id=83, 615.0177pt x 396.0396pt>
 File: ReviewsPorJuegoFinal.png Graphic file (type png)
 <use ReviewsPorJuegoFinal.png>
 Package pdftex.def Info: ReviewsPorJuegoFinal.png  used on input line 194.
@@ -569,7 +566,7 @@ l.211
                                                   \__shipout_drop_firstpage_...
 l.211 
        <./ReviewsPorJuego.png> <./reviewsPorUsuario.png> <./reviewsPorUsuario2.png> <./reviewsPorUsuarioFinal.png>]
-<output.png, id=102, 620.7993pt x 396.0396pt>
+<output.png, id=104, 620.7993pt x 396.0396pt>
 File: output.png Graphic file (type png)
 <use output.png>
 Package pdftex.def Info: output.png  used on input line 214.
@@ -677,16 +674,16 @@ Package rerunfilecheck Info: File `"paper v2".out' has not changed.
 Here is how much of TeX's memory you used:
  12934 strings out of 480247
  204540 string characters out of 5896106
- 543422 words of memory out of 5000000
+ 543663 words of memory out of 5000000
  30387 multiletter control sequences out of 15000+600000
  502766 words of font info for 208 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  60i,11n,69p,1054b,436s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on "paper v2.pdf" (6 pages, 499936 bytes).
+Output written on "paper v2.pdf" (6 pages, 500149 bytes).
 PDF statistics:
- 212 PDF objects out of 1000 (max. 8388607)
- 160 compressed objects within 2 object streams
+ 214 PDF objects out of 1000 (max. 8388607)
+ 162 compressed objects within 2 object streams
  46 named destinations out of 1000 (max. 500000)
  58931 words of extra memory for PDF output out of 61914 (max. 10000000)
 
