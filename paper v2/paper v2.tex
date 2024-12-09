@@ -92,7 +92,7 @@ This system uses regular clustering algorithms to group users based on their rat
 
 \subsection{Proposal}
 
-We propose a refined version of that last system, using metadata-centric clustering to group board games based on their characteristics, and then recommending games to groups of players based on their summed preferences used the functions detailed on the previous work. This system is designed to be more accuarate than the previous one, as it takes into account the characteristics of the games, and not just the ratings of the users.
+We propose a refined version of that last system, using metadata-centric clustering to group board games based on their characteristics, and then recommending games to groups of players based on their summed preferences using the functions detailed on the previous work. This system is designed to be more accuarate than the previous one, as it takes into account the characteristics of the games, and not just the ratings of the users.
 
 \section{Data analysis}
 
@@ -104,36 +104,36 @@ The dataset that will be used for this project\footnote{\cite{board_games_kaggle
     \item \texttt{temes.csv}: Contains the themes of each game as a binary flag. The 50 most common themes can be seen in the graph in figure \ref{fig:tematicasComunes}.
     \item \texttt{mechanics.csv}: Contains the game mechanics as a binary flag. The 50 most common mechanics can be seen in the graph in figure \ref{fig:mecanicasComunes}.
     \item \texttt{subcategories.csv}: Contains the subcategories of each game in binary flag format.
-    \item \texttt{artists\_reduced.csv}: Contains information about which artist created a certain game in binary flag format. Only artists with more than 3 games created will be considered.
-    \item \texttt{designer\_reduced.csv}: Contains information about which designer designed a certain game in binary flag format. Only designers with more than 3 games created are considered.
-    \item \texttt{publishers\_reduced.csv}: Contains information about the companies that sell these games in binary flag format. Only companies that sell more than 3 games are considered.
+    \item \texttt{artists\_reduced.csv}: Contains information about which artist created a certain game in binary flag format.
+    \item \texttt{designer\_reduced.csv}: Contains information about which designer designed a certain game in binary flag format.
+    \item \texttt{publishers\_reduced.csv}: Contains information about which companies sell each game in binary flag format.
           
 \end{itemize}
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.8\linewidth]{publishYear.png}
+    \includegraphics[width=0.9\linewidth]{publishYear.png}
     \caption{Amount of games (y axis) by year of publication(x axis)}
     \label{fig:publishYear}
 \end{figure}
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\linewidth]{distribucionRatings.png}
+    \includegraphics[width=0.9\linewidth]{distribucionRatings.png}
     \caption{Games rating distribution (1-10)}
     \label{fig:distribucionRatings}
 \end{figure}
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\linewidth]{tematicasComunes.png}
+    \includegraphics[width=0.9\linewidth]{tematicasComunes.png}
     \caption{Most common game themes on the dataset}
     \label{fig:tematicasComunes}
 \end{figure}
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\linewidth]{mecanicasComunes.png}
+    \includegraphics[width=0.9\linewidth]{mecanicasComunes.png}
     \caption{Most common game mechanics on the dataset}
     \label{fig:mecanicasComunes}
 \end{figure}
@@ -151,20 +151,20 @@ The first stage consists of reducing the dataset. This is important because the 
 
 Part of the reduction is already done on the dataset by default, since there are no games with less than 20 ratings. Since we are going to also reduce the amount of users, we will delete games further up to 40 ratings, and then pick from 4 different game classes like the ones shown on figure \ref{fig:reviewsPorJuego}.
 
-With that in mind, we will reduce the amount of games to 1500, from the original $>$10k by taking 375 games from each class.
+With that in mind, we will reduce the amount of games to 1500, from the original 22k by taking 375 games from each class.
 
 We will also reduce the amount of users to 15k, from the original $>$300k, first deleting all users with only 1 review. However, the classes will be more complicated to build, since we will be deleting a lot of games, so just making classes like in figure \ref{fig:reviewsPorUsuario} will not be enough.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\linewidth]{ReviewsPorJuego.png}
+    \includegraphics[width=0.9\linewidth]{ReviewsPorJuego.png}
     \caption{Amount of reviews per game}
     \label{fig:reviewsPorJuego}
 \end{figure}
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\linewidth]{reviewsPorUsuario.png}
+    \includegraphics[width=0.9\linewidth]{reviewsPorUsuario.png}
     \caption{Amount of reviews per user (full dataset)}
     \label{fig:reviewsPorUsuario}
 \end{figure}
@@ -173,7 +173,7 @@ To do that, we will have to make the graph after selecting the games from each c
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\linewidth]{reviewsPorUsuario2.png}
+    \includegraphics[width=0.9\linewidth]{reviewsPorUsuario2.png}
     \caption{Amount of reviews per user (1500 items)}
     \label{fig:reviewsPorUsuario2}
 \end{figure}
@@ -184,14 +184,14 @@ The final amount of reviews per user and per game can be seen in figure \ref{fig
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\linewidth]{reviewsPorUsuarioFinal.png}
+    \includegraphics[width=0.9\linewidth]{reviewsPorUsuarioFinal.png}
     \caption{Amount of reviews per user (after full reduction)}
     \label{fig:reviewsPorUsuarioFinal}
 \end{figure}
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\linewidth]{ReviewsPorJuegoFinal.png}
+    \includegraphics[width=0.9\linewidth]{ReviewsPorJuegoFinal.png}
     \caption{Amount of reviews per game (after full reduction)}
     \label{fig:reviewsPorJuegoFinal}
 \end{figure}
@@ -201,13 +201,20 @@ With this, we expect to make a more efficient solution for group-based game reco
 \subsection{Group making}
 
 % Insertar referencia y citar apropiadamente el trabajo.
-The second stage consists of grouping the users based on their characteristics by using a correlation matrix. The function used is an adaptation of the one used in the "" work, which is based on the cosine similarity between the users. The function is as follows:
+The second stage consists of grouping the users based on their characteristics by using a correlation matrix. The function used is an adaptation of the one used in the work of \cite{group_recommenders_repo}. This function is used to calculate the similarity between users based on their ratings, and then group them based on that similarity.
 
-% Arreglar función
-\begin{equation}
-    %\text{similarity}(u, v) = \frac{\sum_{i=1}^{n} u_i \cdot v_i}{\sqrt{\sum_{i=1}^{n} u_i^2} \cdot \sqrt{\sum_{i=1}^{n} v_i^2}}
-\end{equation}
+To assemble groups by similarity, we use the Pearson product-moment correlation coefficients matrix. In order to do this, a matrix with users by rows and items by columns is built, in which the entry $i,j$ is the rating that the user $i$ gave to item $j$, every item that is not rated is rated as 0.
 
+From that matrix, we calculate the coefficient matrix where the entry $i,j$ is $$\frac{C_{ij}}{\sqrt{C_{ii}C_{jj}}}$$ with $C_{ij}$  the covariance between user $i$ and user $j$.
+
+The groups are then formed by selecting the users with the highest correlation coefficients. The number of groups is determined by the user, and the number of users per group is also determined by the user. For this work, we will use as many groups as possible with 4 users each (as it is the most common maximum of players for a given game in this dataset, as seen on figure \ref{fig:output}).
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\linewidth]{output.png}
+    \caption{Most common number of max players}
+    \label{fig:output}
+\end{figure}
 
 \subsection{Recommendation}
 The third stage consists of recommending games to groups of players based on their preferences. Since the recommendations are supposed to be made to groups, the preferences of the group are calculated using a variety of methods, that can be described as follows:
@@ -242,10 +249,9 @@ The metrics that will be used to evaluate the performance of each model are the 
     \item Serendipity: This metric measures the likelihood of the recommendations to pleasantly surprise the user, enhancing the user experience.
 \end{itemize}
 
-For each metric, we used a cumulative avarage of the results of 300 different group formations, on which we applied the common formulas for each metric. Meaning that for each group, we calculated all of the metrics mentioned above, then we added them and divided by the number of groups.
-\newline 
+For each metric, we used a cumulative avarage of the results of 300 different group formations, on which we applied the common formulas for each metric. Meaning that, for each group, we calculated all of the metrics mentioned above, then we added them and divided by the number of groups.
 
-As is shown on table \ref{tab:resultados-modelos}, the LightFM model outperforms the other models in almost all metrics. This is to be expected, since its using not only user-item interactions but also metadata to make recommendations. 
+As is shown on tables \ref{tab:resultados-modelos} and \ref{tab:resultados-modelos-similar}, the LightFM model outperforms the other models in almost all metrics. This is what we where looking for in this work, that it gives better metrics since its using not only user-item interactions but also metadata to make recommendations. 
 The metadata recommendation allows for the model to recommend similiar items to two or more users that have similar preferences even if they have not interacted with any items in common. This is specially helpful when 
 making groups recommendations, because it allows for greater diversity and novelty and creates a more personalized group experience.
 
@@ -295,7 +301,7 @@ However, for new users, the results might not be as expected. The user needs to 
 
 In this work, we proposed a group recommendation system for board games using metadata from the Board Game Geek website. The system uses a LightFM model to make recommendations based on the preferences of the group. 
 
-Our system outperforms traditional recommendation models, such matrix factorization (SVD), in terms of key metrics like Precision, Recall, nDCG, Diversity, and Serendipity. By incorporating metadata — including attributes like game mechanics, themes, and complexity — our model provides more personalized and diverse recommendations that cater to the collective preferences of the group, rather than relying solely on individual user interactions.
+Our system outperforms traditional recommendation models, such matrix factorization (SVD), in terms of key metrics like Precision, Recall, nDCG, Diversity, and Serendipity. By incorporating metadata — including attributes like game mechanics, themes, and complexity — our model provides more personalized and diverse recommendations.
 
 The results are consistent across different group formations, showing that the model is able to make recommendations based on the preferences of the group, and not on the preferences of the individual users. This is a key advantage of our system, as it ensures that the recommendations are tailored to the group as a whole, rather than to individual users.
 
