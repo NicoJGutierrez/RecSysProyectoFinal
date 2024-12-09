@@ -291,113 +291,11 @@ However, for new users, the results might not be as expected. The user needs to 
     \label{tab:resultados-modelos-similar}
 \end{table}
 
-
-
-\section{Sensitivity Analysis}
-
 \section{Conclusions}
 
-% You can use footnotes\footnote{Footnotes should be complete sentences.} to provide readers with additional information about a topic without interrupting the flow of the paper.
+In this work, we presented a novel approach to group-based board game recommendations by leveraging both user ratings and game metadata. Our system outperforms traditional recommendation models, such matrix factorization (SVD), in terms of key metrics like Precision, Recall, nDCG, Diversity, and Serendipity. By incorporating metadata — including attributes like game mechanics, themes, and complexity — our model provides more personalized and diverse recommendations that cater to the collective preferences of the group, rather than relying solely on individual user interactions.
 
-% \begin{figure}[ht]
-% \vskip 0.2in
-% \begin{center}
-% \centerline{\includegraphics[width=\columnwidth]{icml_numpapers}}
-% \caption{Historical locations and number of accepted papers for International
-% Machine Learning Conferences (ICML 1993 -- ICML 2008) and International
-% Workshops on Machine Learning (ML 1988 -- ML 1992). At the time this figure was
-% produced, the number of accepted papers for ICML 2008 was unknown and instead
-% estimated.}
-% \label{icml-historical}
-% \end{center}
-% \vskip -0.2in
-% \end{figure}
-
-% \section{Figures}
-
-% You may want to include figures in the paper to illustrate your approach and results. Such artwork should be centered, legible, and separated from the text. Lines should be dark and at least 0.5~points thick for purposes of reproduction, and text should not appear on a gray background.
-
-% Label all distinct components of each figure. If the figure takes the form of a graph, then give a name for each axis and include a legend that briefly describes each curve. Do not include a title inside the figure; instead, the caption should serve this function.
-
-%Number figures sequentially, placing the figure number and caption \emph{after} the graphics, with at least 0.1~inches of space before
-
-%You may float figures to the top or bottom of a column, and you may set wide figures across both columns (use the environment \texttt{figure*} in \LaTeX). Always place two-column figures at the top or bottom of the page.
-
-
-% Ejemplo de algoritmo (creo que no usaremos esto)
-% \begin{algorithm}[tb]
-%    \caption{Bubble Sort}
-%    \label{alg:example}
-% \begin{algorithmic}
-%    \STATE {\bfseries Input:} data $x_i$, size $m$
-%    \REPEAT
-%    \STATE Initialize $noChange = true$.
-%    \FOR{$i=1$ {\bfseries to} $m-1$}
-%    \IF{$x_i > x_{i+1}$}
-%    \STATE Swap $x_i$ and $x_{i+1}$
-%    \STATE $noChange = false$
-%    \ENDIF
-%    \ENDFOR
-%    \UNTIL{$noChange$ is $true$}
-% \end{algorithmic}
-% \end{algorithm}
-
-
-% Ejemplo de tabla
-% \begin{table}[t]
-% \caption{Classification accuracies for naive Bayes and flexible
-% Bayes on various data sets.}
-% \label{sample-table}
-% \vskip 0.15in
-% \begin{center}
-% \begin{small}
-% \begin{sc}
-% \begin{tabular}{lcccr}
-% \toprule
-% Data set & Naive & Flexible & Better? \\
-% \midrule
-% Breast    & 95.9$\pm$ 0.2& 96.7$\pm$ 0.2& $\surd$ \\
-% Cleveland & 83.3$\pm$ 0.6& 80.0$\pm$ 0.6& $\times$\\
-% Glass2    & 61.9$\pm$ 1.4& 83.8$\pm$ 0.7& $\surd$ \\
-% Credit    & 74.8$\pm$ 0.5& 78.3$\pm$ 0.6&         \\
-% Horse     & 73.3$\pm$ 0.9& 69.7$\pm$ 1.0& $\times$\\
-% Meta      & 67.1$\pm$ 0.6& 76.5$\pm$ 0.5& $\surd$ \\
-% Pima      & 75.1$\pm$ 0.6& 73.9$\pm$ 0.5&         \\
-% Vehicle   & 44.9$\pm$ 0.6& 61.5$\pm$ 0.4& $\surd$ \\
-% \bottomrule
-% \end{tabular}
-% \end{sc}
-% \end{small}
-% \end{center}
-% \vskip -0.1in
-% \end{table}
-
-% \subsection{Citations and References}
-
-% Please use APA reference format regardless of your formatter
-% or word processor. If you rely on the \LaTeX\/ bibliographic
-% facility, use \texttt{natbib.sty} and \texttt{icml2021.bst}
-% included in the style-file package to obtain this format.
-
-% Citations within the text should include the authors' last names and
-% year. If the authors' names are included in the sentence, place only
-% the year in parentheses using yrcite.
-
-% Alphabetize references by the surnames of the first authors, with
-% single author entries preceding multiple author entries. Order
-% references for the same authors by year of publication, with the
-% earliest first. Make sure that each reference includes all relevant
-% information (e.g., page numbers).
-
-% Please put some effort into making references complete, presentable, and
-% consistent. If using bibtex, please protect capital letters of names and
-% abbreviations in titles, for example, use \{B\}ayesian or \{L\}ipschitz
-% in your .bib file.
-
-
-% In the unusual situation where you want a paper to appear in the
-% references without citing it in the main text, use \nocite
-% \nocite{}
+The results highlight the value of metadata in enhancing recommendation accuracy, ensuring greater variety and novelty in the suggested games, and improving the overall user experience. Our method not only improves the quality of recommendations but also addresses the challenge of recommending games for groups with diverse preferences. The robustness and scalability of the proposed system indicate its potential for application in other domains requiring group-based recommendations, such as tourism, movies, or event planning.
 
 \section{Future work}
 
