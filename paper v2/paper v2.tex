@@ -9,6 +9,7 @@
 \usepackage{hyperref}
 % the following package enables the use of multiline comments:
 \usepackage{comment}
+\usepackage{amsmath}
 
 % Attempt to make hyperref and algorithmic work together better:
 \newcommand{\theHalgorithm}{\arabic{algorithm}}
@@ -27,37 +28,37 @@
 
 \twocolumn[
     \icmltitle{Board games group recomendation using metadata}
-
+    
     % It is OKAY to include author information, even for blind
     % submissions: the style file will automatically remove it for you
     % unless you've provided the [accepted] option to the icml2021
     % package.
-
+    
     % List of affiliations: The first argument should be a (short)
     % identifier you will use later to specify author affiliations
     % Academic affiliations should list Department, University, City, Region, Country
     % Industry affiliations should list Company, City, Region, Country
-
+    
     % You can specify symbols, otherwise they are numbered in order.
     % Ideally, you should not use this facility. Affiliations will be numbered
     % in order of appearance and this is the preferred way.
     \icmlsetsymbol{equal}{*}
-
+    
     \begin{icmlauthorlist}
         \icmlauthor{Eduardo Salinas}{to}
         \icmlauthor{Alfonso Badilla}{to}
         \icmlauthor{Nicolás Gutiérrez}{to}
     \end{icmlauthorlist}
-
+    
     \icmlaffiliation{to}{Department of Computation, Pontificia Universidad Católica de Chile, Santiago, Chile}
-
+    
     \icmlcorrespondingauthor{Eduardo Salinas}{esalinasbarros@uc.cl}
     \icmlcorrespondingauthor{Alfonso Badilla}{alfonso.badilla@uc.cl}
     \icmlcorrespondingauthor{Nicolás Gutiérrez}{njgutierrez@uc.cl}
-
+    
     % You may provide any keywords that you find helpful for describing your paper; these are used to populate the "keywords" metadata in the PDF but will not be shown in the document
     \icmlkeywords{Machine Learning, ICML, Group recommendation, Metadata}
-
+    
     \vskip 0.3in
 ]
 
@@ -106,7 +107,7 @@ The dataset that will be used for this project\footnote{\cite{board_games_kaggle
     \item \texttt{artists\_reduced.csv}: Contains information about which artist created a certain game in binary flag format. Only artists with more than 3 games created will be considered.
     \item \texttt{designer\_reduced.csv}: Contains information about which designer designed a certain game in binary flag format. Only designers with more than 3 games created are considered.
     \item \texttt{publishers\_reduced.csv}: Contains information about the companies that sell these games in binary flag format. Only companies that sell more than 3 games are considered.
-
+          
 \end{itemize}
 
 \begin{figure}
@@ -208,12 +209,12 @@ The second stage consists of grouping the users based on their characteristics b
 The third stage consists of recommending games to groups of players based on their preferences. Since the recommendations are supposed to be made to groups, the preferences of the group are calculated using a variety of methods, that can be described as follows:
 \begin{enumerate}
     \item Simple average: The preferences of the group are calculated as the simple average of the preferences of the individual players based on a top-100 recommendation list prior to the group formation. This can be done with the following formula:
-    \begin{equation}
-        \text{avg\_score\_item} = \frac{\sum_{i=1}^{n} \text{user\_rating}_i}{n}
-    \end{equation}
-    with $n$ being the number of users in the group, and $u_i$ being the rating of the $i$-th user given an item.
-    % \item Least misery: The preferences of the group are calculated as the minimum of the preferences of the individual players.
-    % \item ... % asegurarse que esto está al día con lo que presentemos al final del trabajo
+          \begin{equation}
+              \text{avg\_score\_item} = \frac{\sum_{i=1}^{n} \text{user\_rating}_i}{n}
+          \end{equation}
+          with $n$ being the number of users in the group, and $u_i$ being the rating of the $i$-th user given an item.
+          % \item Least misery: The preferences of the group are calculated as the minimum of the preferences of the individual players.
+          % \item ... % asegurarse que esto está al día con lo que presentemos al final del trabajo
 \end{enumerate}
 
 Given the method explained above, we assign the score to each of the items in the top-100 recommedation list of each user on a group. Then we create a new list of items combining the top-100 recommendation lists of each user on a group, and we extract the top-n items with the highest average scores. Note that for this to work properly, if two users have a matching item in their top-100 recommendation list, the item will only be included as the sum of the average rankings by the users in the group.
@@ -244,13 +245,9 @@ As is shown on table \ref{tab:resultados-modelos}, the LightFM model outperforms
 The metadata recommendation allows for the model to recommend similiar items to two or more users that have similar preferences even if they have not interacted with any items in common. This is specially helpful when 
 making groups recommendations, because it allows for greater diversity and novelty and creates a more personalized group experience.
 
-\newline
 One aspect of the recommendations that is worth mentioning is that the LightFM model is capable of superior results with more diversity. This means that all groups will get recommended different games, but they are tailored to the preferences of each user on a group. This in hand increases the novelty and the serendipity of the recommendations, creating more unique experiences for the users.
 
-\newline
 For each different group formation, the results are the same. This is to be expected, since the group formation is based on the preferences of the users, and the recommendations are made based on the preferences of the group. Not on the preferences of the individual users. This is a good sign, beacuase it shows that the model does not overfit to any group formation and it is able to make recommendations based on the preferences of the group.
-
-\newline
 
 However, for new users, the results might not be as expected. The user needs to create user-item interactions in order to get proper recommendations.
 \begin{table}[]
