@@ -221,9 +221,27 @@ The metrics that will be used to evaluate the performance of each model are the 
 \begin{itemize}
     \item Precision at k: This metric measures the proportion of recommended items that are relevant to the user, where relevance is defined as the items that the user has interacted with.
     \item Recall at k: This metric measures the proportion of relevant items that are recommended to the user.
-    \item F1 score: This metric is the harmonic mean of precision and recall, and is used to measure the overall performance of the model.
+    \item nDCG@k: This metric measures the normalized discounted cumulative gain at k, and is used to measure the quality of the recommendations.
+    \item Relevance Score: This metric evaluates how relevant the recommendations are to the user, providing an indication of the recommendation quality.
+    \item Diversity: This metric assesses the variety of the recommendations, ensuring a wide range of different items are suggested.
+    \item Novelty: This metric measures how new or unexpected the recommendations are to the user, contributing to the overall recommendation quality.
+    \item Fairness: This metric evaluates the fairness of the recommendations, ensuring that the recommendations are unbiased and equitable.
+    \item Serendipity: This metric measures the likelihood of the recommendations to pleasantly surprise the user, enhancing the user experience.
 \end{itemize}
 
+As is shown on table \ref{tab:resultados-modelos}, the LightFM model outperforms the other models in almost all metrics. This is to be expected, since its using not only user-item interactions but also metadata to make recommendations. 
+The metadata recommendation allows for the model to recommend similiar items to two or more users that have similar preferences even if they have not interacted with any items in common. This is specially helpful when 
+making groups recommendations, because it allows for greater diversity and novelty and creates a more personalized group experience.
+
+\newline
+One aspect of the recommendations that is worth mentioning is that the LightFM model is capable of superior results with more diversity. This means that all groups will get recommended different games, but they are tailored to the preferences of each user on a group. This in hand increases the novelty and the serendipity of the recommendations, creating more unique experiences for the users.
+
+\newline
+For each different group formation, the results are the same. This is to be expected, since the group formation is based on the preferences of the users, and the recommendations are made based on the preferences of the group. Not on the preferences of the individual users. This is a good sign, beacuase it shows that the model does not overfit to any group formation and it is able to make recommendations based on the preferences of the group.
+
+\newline
+
+However, for new users, the results might not be as expected. The user needs to create user-item interactions in order to get proper recommendations.
 \begin{table}[]
     \centering
     \begin{tabular}{|l|l|l|l|}
