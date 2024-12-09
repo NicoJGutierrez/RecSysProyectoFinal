@@ -143,8 +143,11 @@ def calculate_group_metrics(parsed_data, train_df, k=5, threshold=5):
     }
     return avg_metrics
 
-test_df = pd.read_csv('recommendations/lastsample/test.csv')
-groups_df = pd.read_csv('recommendations/lastsample/random_group_recommendations.csv')
+
+sampling_method = "itemsaaaample"   # ["itemsaaaample", "lastsaaaample"] escoger una
+
+test_df = pd.read_csv(f'recommendations/{sampling_method}/test.csv')
+groups_df = pd.read_csv(f'recommendations/{sampling_method}/random_group_recommendations.csv')
 parsed_data = parse_group_data(groups_df)
 metrics = calculate_group_metrics(parsed_data, test_df, k=5)
 print("\nRandom LightFM")
@@ -157,7 +160,7 @@ print(f"Novelty: {metrics['average_novelty']:.2f}")
 print(f"Fairness: {metrics['average_fairness']:.2f}")
 print(f"Serendipity: {metrics['average_serendipity']:.2f}")
 
-groups_df = pd.read_csv('recommendations/lastsample/similar_group_recommendations.csv')
+groups_df = pd.read_csv(f'recommendations/{sampling_method}/similar_group_recommendations.csv')
 parsed_data = parse_group_data(groups_df)
 metrics = calculate_group_metrics(parsed_data, test_df, k=5)
 print("\nSimilar LightFM")
@@ -171,7 +174,7 @@ print(f"Fairness: {metrics['average_fairness']:.2f}")
 print(f"Serendipity: {metrics['average_serendipity']:.2f}")
 
 
-groups_df = pd.read_csv('recommendations/lastsample/svd_random_group_recommendations.csv')
+groups_df = pd.read_csv(f'recommendations/{sampling_method}/svd_random_group_recommendations.csv')
 parsed_data = parse_group_data(groups_df)
 metrics = calculate_group_metrics(parsed_data, test_df, k=5)
 print("\nRandom SVD")
@@ -184,7 +187,7 @@ print(f"Novelty: {metrics['average_novelty']:.2f}")
 print(f"Fairness: {metrics['average_fairness']:.2f}")
 print(f"Serendipity: {metrics['average_serendipity']:.2f}")
 
-groups_df = pd.read_csv('recommendations/lastsample/svd_similar_group_recommendations.csv')
+groups_df = pd.read_csv(f'recommendations/{sampling_method}/svd_similar_group_recommendations.csv')
 parsed_data = parse_group_data(groups_df)
 metrics = calculate_group_metrics(parsed_data, test_df, k=5)
 print("\nSimilar SVD")
@@ -198,7 +201,7 @@ print(f"Fairness: {metrics['average_fairness']:.2f}")
 print(f"Serendipity: {metrics['average_serendipity']:.2f}")
 
 
-groups_df = pd.read_csv('recommendations/lastsample/mostpopular_random_group_recommendations.csv')
+groups_df = pd.read_csv(f'recommendations/{sampling_method}/mostpopular_random_group_recommendations.csv')
 parsed_data = parse_group_data(groups_df)
 metrics = calculate_group_metrics(parsed_data, test_df, k=5)
 print("\nRandom Most Popular")
@@ -211,7 +214,7 @@ print(f"Novelty: {metrics['average_novelty']:.2f}")
 print(f"Fairness: {metrics['average_fairness']:.2f}")
 print(f"Serendipity: {metrics['average_serendipity']:.2f}")
 
-groups_df = pd.read_csv('recommendations/lastsample/mostpopular_similar_group_recommendations.csv')
+groups_df = pd.read_csv(f'recommendations/{sampling_method}/mostpopular_similar_group_recommendations.csv')
 parsed_data = parse_group_data(groups_df)
 metrics = calculate_group_metrics(parsed_data, test_df, k=5)
 print("\nSimilar Most Popular")
