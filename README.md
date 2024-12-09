@@ -1,23 +1,9 @@
-# RecSysProyectoFinal
+# ProyectoFinal IIC3633: Recomendación Grupal para Juegos de Mesa
 
-## Para la entrega 2:
-Quiero revisar qué puedo hacer de las siguientes cosas:
-- Revisar que hace airbnb para armar listas de estancias para grupos de personas, si su recomendador tiene eso en cuenta.
-- Priorización de metadata específico por usuario: Que para cada usuario se pueda manejar que metadata es relavante para él/ella.
+Este repositorio contiene diversos jupyter notebooks usados para calcular y graficar pero tiene uno central llamado ```ProyectoJuegosMesa.ipynb``` y se explica su ejecución más abajo, se incluye también un .csv con los grupos sintéticos creados y una carpeta con las recomendaciones hechas para poder calcular métricas
 
+## Para ejecutar el jupyter notebook:
+Se puede directamente correr el notebook completo, se debe elegir que tipo de grupos hacer en la primera celda de **Código nuestro**, la variable llamada ```group_similarity_to_create```, en la misma celda aparecen las opciones posibles.
 
-## Lo que haremos para nuestro recomendador:
-1) Hacer un recomendador simple que entregue los ratings normalizados de cada persona. La idea es generar una matriz completa de los ítems usando:
-    - i-knn a modo de base
-    - Un recomendador que utilice metadata para generar la matriz completa
-2) Tomar las listas de recomendaciones generadas por el sistema para cada usuario y combinarlas en una sola usando las siguientes ponderaciones:
-    - (fuente: <https://towardsdatascience.com/an-introduction-to-group-recommender-systems-8f942a06db56>)
-    - Utilitario-Aditivo (equivalente a promedio)
-    - Utilitario-Multiplicativo
-    - Minimización de miseria (maximizar el mínimo puntaje entre los usuarios)
-    - Utilitario (multiplicativo o aditivo) sin miseria (se determina un mínimo razonable para cada usuario y se maximizan utilidades luego)
-3) Le podríamos preguntar a Chat-GPT qué es lo más importante para que la gente disfrute de un juego de mesa y en función de lo que responda elegir la ponderación.
-    - Esto porque probablemente nos va a dar un consenso razonable.
-    - Esto se puede hacer para el trabajo si compartimos la sesión de chat.
-4) Es muy importante que los rating de cada usuario estén normalizados para que esas recomendaciones sean mejores.
-5) Si utilizamos metadata, generar parámetros por usuario para que elijan qué tipo de metadata es más importante para cada uno.
+## Para las metricas:
+Se corren en un archivo aparte llamado ```metrics.py```, el cual también tiene una variable a elegir, entre dos distintos sampleos de reviews usados. La variable es ```sampling_method ````, está al comienzo del código ejecutable, justo después de las funciones, tiene dos opciones y están escritas en un comentario al lado de esta.
