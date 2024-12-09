@@ -224,6 +224,43 @@ The metrics that will be used to evaluate the performance of each model are the 
     \item F1 score: This metric is the harmonic mean of precision and recall, and is used to measure the overall performance of the model.
 \end{itemize}
 
+\begin{table}[]
+    \centering
+    \begin{tabular}{|l|l|l|l|}
+        \hline
+        \textbf{Statistic} & \textbf{LightFM} & \textbf{SVD} & \textbf{Most Popular} \\ \hline
+        Precision          & 0.3660           & 0.2020       & 0.3010                \\
+        Recall@5           & 0.0942           & 0.0520       & 0.0766                \\
+        nDCG@5             & 0.6232           & 0.4762       & 0.5903                \\
+        Relevance Score    & 2.76             & 1.59         & 2.32                  \\
+        Diversity          & 0.03             & 0.01         & 0.01                  \\
+        Novelty            & 5.89             & 8.52         & 5.70                  \\
+        Fairness           & 0.60             & 0.72         & 0.66                  \\
+        Serendipity        & 4.51             & 2.80         & 3.63                  \\ \hline
+    \end{tabular}
+    \caption{Random groups recomendation results}
+    \label{tab:resultados-modelos}
+\end{table}
+
+\begin{table}[]
+    \centering
+    \begin{tabular}{|l|l|l|l|}
+        \hline
+        \textbf{Statistic} & \textbf{LightFM} & \textbf{SVD} & \textbf{Most Popular} \\ \hline
+        Precision          & 0.3350           & 0.2040       & 0.3240                \\
+        Recall@5           & 0.0821           & 0.0498       & 0.0749                \\
+        nDCG@5             & 0.5722           & 0.4736       & 0.5474                \\
+        Relevance Score    & 2.57             & 1.62         & 2.48                  \\
+        Diversity          & 0.04             & 0.01         & 0.01                  \\
+        Novelty            & 5.99             & 8.60         & 5.70                  \\
+        Fairness           & 0.63             & 0.72         & 0.64                  \\
+        Serendipity        & 4.61             & 2.75         & 4.06                  \\ \hline
+    \end{tabular}
+    \caption{Similar groups recommendation results}
+    \label{tab:resultados-modelos-similar}
+\end{table}
+
+
 
 \section{Sensitivity Analysis}
 
