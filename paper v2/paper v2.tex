@@ -112,28 +112,28 @@ The dataset that will be used for this project\footnote{\cite{board_games_kaggle
 \begin{figure}
     \centering
     \includegraphics[width=0.8\linewidth]{publishYear.png}
-    \caption{Juegos por año de publicación}
+    \caption{Amount of games (y axis) by year of publication(x axis)}
     \label{fig:publishYear}
 \end{figure}
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.8\linewidth]{distribucionRatings.png}
-    \caption{Distribución de ratings de juegos}
+    \caption{Games rating distribution (1-10)}
     \label{fig:distribucionRatings}
 \end{figure}
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.8\linewidth]{tematicasComunes.png}
-    \caption{Temáticas más comunes en el dataset}
+    \caption{Most common game themes on the dataset}
     \label{fig:tematicasComunes}
 \end{figure}
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.8\linewidth]{mecanicasComunes.png}
-    \caption{Mecánicas más comunes en el dataset}
+    \caption{Most common game mechanics on the dataset}
     \label{fig:mecanicasComunes}
 \end{figure}
 
@@ -142,7 +142,9 @@ The dataset that will be used for this project\footnote{\cite{board_games_kaggle
 The methodology for this project is divided into three main stages: data preprocessing, group making, and recommendation.
 
 \subsection{Data preprocessing}
-The first stage consists of reducing the dataset by not picking items without interactions and then dividing the...
+The first stage consists of reducing the dataset. This is important because the amount of data makes it take too long to calculate any meaningful metrics.
+
+Part of the reduction is already done on the dataset by default, since there are no games with less than 20 ratings. Since we are going to also reduce the amount of users, we will delete games further up to 40 ratings, and then pick from 4 different game classes.
 
 % Mostrar gráfico de las clases de usuarios y clases de ítems, además de mostrar cuantos no valen la pena.
 
@@ -198,11 +200,11 @@ The metrics that will be used to evaluate the performance of each model are the 
 % \vskip -0.2in
 % \end{figure}
 
-\section{Figures}
+% \section{Figures}
 
-You may want to include figures in the paper to illustrate your approach and results. Such artwork should be centered, legible, and separated from the text. Lines should be dark and at least 0.5~points thick for purposes of reproduction, and text should not appear on a gray background.
+% You may want to include figures in the paper to illustrate your approach and results. Such artwork should be centered, legible, and separated from the text. Lines should be dark and at least 0.5~points thick for purposes of reproduction, and text should not appear on a gray background.
 
-Label all distinct components of each figure. If the figure takes the form of a graph, then give a name for each axis and include a legend that briefly describes each curve. Do not include a title inside the figure; instead, the caption should serve this function.
+% Label all distinct components of each figure. If the figure takes the form of a graph, then give a name for each axis and include a legend that briefly describes each curve. Do not include a title inside the figure; instead, the caption should serve this function.
 
 %Number figures sequentially, placing the figure number and caption \emph{after} the graphics, with at least 0.1~inches of space before
 
@@ -257,27 +259,27 @@ Label all distinct components of each figure. If the figure takes the form of a 
 % \vskip -0.1in
 % \end{table}
 
-\subsection{Citations and References}
+% \subsection{Citations and References}
 
-Please use APA reference format regardless of your formatter
-or word processor. If you rely on the \LaTeX\/ bibliographic
-facility, use \texttt{natbib.sty} and \texttt{icml2021.bst}
-included in the style-file package to obtain this format.
+% Please use APA reference format regardless of your formatter
+% or word processor. If you rely on the \LaTeX\/ bibliographic
+% facility, use \texttt{natbib.sty} and \texttt{icml2021.bst}
+% included in the style-file package to obtain this format.
 
-Citations within the text should include the authors' last names and
-year. If the authors' names are included in the sentence, place only
-the year in parentheses using yrcite.
+% Citations within the text should include the authors' last names and
+% year. If the authors' names are included in the sentence, place only
+% the year in parentheses using yrcite.
 
-Alphabetize references by the surnames of the first authors, with
-single author entries preceding multiple author entries. Order
-references for the same authors by year of publication, with the
-earliest first. Make sure that each reference includes all relevant
-information (e.g., page numbers).
+% Alphabetize references by the surnames of the first authors, with
+% single author entries preceding multiple author entries. Order
+% references for the same authors by year of publication, with the
+% earliest first. Make sure that each reference includes all relevant
+% information (e.g., page numbers).
 
-Please put some effort into making references complete, presentable, and
-consistent. If using bibtex, please protect capital letters of names and
-abbreviations in titles, for example, use \{B\}ayesian or \{L\}ipschitz
-in your .bib file.
+% Please put some effort into making references complete, presentable, and
+% consistent. If using bibtex, please protect capital letters of names and
+% abbreviations in titles, for example, use \{B\}ayesian or \{L\}ipschitz
+% in your .bib file.
 
 
 % In the unusual situation where you want a paper to appear in the
