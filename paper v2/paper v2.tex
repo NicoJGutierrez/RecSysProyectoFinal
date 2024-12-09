@@ -144,9 +144,54 @@ The methodology for this project is divided into three main stages: data preproc
 \subsection{Data preprocessing}
 The first stage consists of reducing the dataset. This is important because the amount of data makes it take too long to calculate any meaningful metrics.
 
-Part of the reduction is already done on the dataset by default, since there are no games with less than 20 ratings. Since we are going to also reduce the amount of users, we will delete games further up to 40 ratings, and then pick from 4 different game classes.
+Part of the reduction is already done on the dataset by default, since there are no games with less than 20 ratings. Since we are going to also reduce the amount of users, we will delete games further up to 40 ratings, and then pick from 4 different game classes like the ones shown on figure \ref{fig:reviewsPorJuego}.
 
-% Mostrar gráfico de las clases de usuarios y clases de ítems, además de mostrar cuantos no valen la pena.
+With that in mind, we will reduce the amount of games to 1500, from the original $>$10k by taking 375 games from each class.
+
+We will also reduce the amount of users to 15k, from the original $>$300k, first deleting all users with only 1 review. However, the classes will be more complicated to build, since we will be deleting a lot of games, so just making classes like in figure \ref{fig:reviewsPorUsuario} will not be enough.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\linewidth]{ReviewsPorJuego.png}
+    \caption{Amount of reviews per game}
+    \label{fig:reviewsPorJuego}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\linewidth]{reviewsPorUsuario.png}
+    \caption{Amount of reviews per user (full dataset)}
+    \label{fig:reviewsPorUsuario}
+\end{figure}
+
+To do that, we will have to make the graph after selecting the games from each class. This graph can be seen in figure \ref{fig:reviewsPorUsuario2}, and as seen on that figure, the classes have shifted due to less reviews overall. We will then make 3 classes as shown, and select 5k users from each class. Note that we will not select users with less than 3 reviews.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\linewidth]{reviewsPorUsuario2.png}
+    \caption{Amount of reviews per user (1500 items)}
+    \label{fig:reviewsPorUsuario2}
+\end{figure}
+
+The final dataset will have 1500 games and 15k users, and will be used for the rest of the project. The dataset will be split into a training and a test set, with 80\% of the data being used for training and 20\% for testing.
+
+The final amount of reviews per user and per game can be seen in figure \ref{fig:reviewsPorUsuarioFinal} and figure \ref{fig:reviewsPorJuegoFinal} respectively.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\linewidth]{reviewsPorUsuarioFinal.png}
+    \caption{Amount of reviews per user (after full reduction)}
+    \label{fig:reviewsPorUsuarioFinal}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\linewidth]{ReviewsPorJuegoFinal.png}
+    \caption{Amount of reviews per game (after full reduction)}
+    \label{fig:reviewsPorJuegoFinal}
+\end{figure}
+
+With this, we expect to make a more efficient solution for group-based game recommendations, so that it can run with regular hardware.
 
 \subsection{Group making}
 
