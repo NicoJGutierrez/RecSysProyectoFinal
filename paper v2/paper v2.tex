@@ -142,6 +142,10 @@ The dataset that will be used for this project\footnote{\cite{board_games_kaggle
 
 The methodology for this project is divided into three main stages: data preprocessing, group making, and recommendation.
 
+For this project we will use the LightFM library\footnote{\cite{DBLP:conf/recsys/Kula15}} to make the recommendations, which is a Python implementation of a factorization machine for collaborative filtering.
+
+We will also use SVD models from the scikit-learn library\footnote{\cite{scikit-learn}} to compare the results of our model with a more traditional approach, and the most popular model as a baseline. SVD was selected above other models like k-nearest due to its usage as industry standard\footnote{\cite{Roy2022}} and due to taking less time executing.
+
 \subsection{Data preprocessing}
 The first stage consists of reducing the dataset. This is important because the amount of data makes it take too long to calculate any meaningful metrics.
 
@@ -223,13 +227,13 @@ Given the method explained above, we assign the score to each of the items in th
 
 \section{Results}
 
-To evaluate the results of our model, we will compare it to most popular as a sanity check, to iknn applied to the same dataset and to SVD applied to the same dataset. % Agregar AGREE si logramos hacerlo funcionar ahora que tenemos menos datos. 
+To evaluate the results of our model, we will compare it to most popular as a sanity check and to SVD applied to the same dataset and groups. % Agregar AGREE si logramos hacerlo funcionar ahora que tenemos menos datos. 
 
 The metrics that will be used to evaluate the performance of each model are the following:
 
 \begin{itemize}
-    \item Precision at k: This metric measures the proportion of recommended items that are relevant to the user, where relevance is defined as the items that the user has interacted with.
-    \item Recall at k: This metric measures the proportion of relevant items that are recommended to the user.
+    \item Precision@k: This metric measures the proportion of recommended items that are relevant to the user, where relevance is defined as the items that the user has interacted with.
+    \item Recall@k: This metric measures the proportion of relevant items that are recommended to the user.
     \item nDCG@k: This metric measures the normalized discounted cumulative gain at k, and is used to measure the quality of the recommendations.
     \item Relevance Score: This metric evaluates how relevant the recommendations are to the user, providing an indication of the recommendation quality.
     \item Diversity: This metric assesses the variety of the recommendations, ensuring a wide range of different items are suggested.
@@ -247,15 +251,16 @@ making groups recommendations, because it allows for greater diversity and novel
 
 One aspect of the recommendations that is worth mentioning is that the LightFM model is capable of superior results with more diversity. This means that all groups will get recommended different games, but they are tailored to the preferences of each user on a group. This in hand increases the novelty and the serendipity of the recommendations, creating more unique experiences for the users.
 
-For each different group formation, the results are the same. This is to be expected, since the group formation is based on the preferences of the users, and the recommendations are made based on the preferences of the group. Not on the preferences of the individual users. This is a good sign, beacuase it shows that the model does not overfit to any group formation and it is able to make recommendations based on the preferences of the group.
+For each different group formation, the results are mostly the same. This is to be expected, since the group formation is based on the preferences of the users, and the recommendations are made based on the preferences of the group. Not on the preferences of the individual users. This is a good sign, beacuase it shows that the model does not overfit to any group formation and it is able to make recommendations based on the preferences of the group.
 
-However, for new users, the results might not be as expected. The user needs to create user-item interactions in order to get proper recommendations.
+However, for new users, the results might not be as expected. The user needs to create user-item interactions in order to get proper recommendations. Untill then, the model should be able to recommend the most popular items, which are the most likely to be relevant to the user according to the very low information the model has.
+
 \begin{table}[]
     \centering
     \begin{tabular}{|l|l|l|l|}
         \hline
         \textbf{Statistic} & \textbf{LightFM} & \textbf{SVD} & \textbf{Most Popular} \\ \hline
-        Precision          & 0.3660           & 0.2020       & 0.3010                \\
+        Precision@5        & 0.3660           & 0.2020       & 0.3010                \\
         Recall@5           & 0.0942           & 0.0520       & 0.0766                \\
         nDCG@5             & 0.6232           & 0.4762       & 0.5903                \\
         Relevance Score    & 2.76             & 1.59         & 2.32                  \\
@@ -273,7 +278,7 @@ However, for new users, the results might not be as expected. The user needs to 
     \begin{tabular}{|l|l|l|l|}
         \hline
         \textbf{Statistic} & \textbf{LightFM} & \textbf{SVD} & \textbf{Most Popular} \\ \hline
-        Precision          & 0.3350           & 0.2040       & 0.3240                \\
+        Precision@5        & 0.3350           & 0.2040       & 0.3240                \\
         Recall@5           & 0.0821           & 0.0498       & 0.0749                \\
         nDCG@5             & 0.5722           & 0.4736       & 0.5474                \\
         Relevance Score    & 2.57             & 1.62         & 2.48                  \\
@@ -286,113 +291,27 @@ However, for new users, the results might not be as expected. The user needs to 
     \label{tab:resultados-modelos-similar}
 \end{table}
 
-
-
-\section{Sensitivity Analysis}
-
 \section{Conclusions}
 
-% You can use footnotes\footnote{Footnotes should be complete sentences.} to provide readers with additional information about a topic without interrupting the flow of the paper.
+In this work, we proposed a group recommendation system for board games using metadata from the Board Game Geek website. The system uses a LightFM model to make recommendations based on the preferences of the group. 
 
-% \begin{figure}[ht]
-% \vskip 0.2in
-% \begin{center}
-% \centerline{\includegraphics[width=\columnwidth]{icml_numpapers}}
-% \caption{Historical locations and number of accepted papers for International
-% Machine Learning Conferences (ICML 1993 -- ICML 2008) and International
-% Workshops on Machine Learning (ML 1988 -- ML 1992). At the time this figure was
-% produced, the number of accepted papers for ICML 2008 was unknown and instead
-% estimated.}
-% \label{icml-historical}
-% \end{center}
-% \vskip -0.2in
-% \end{figure}
+Our system outperforms traditional recommendation models, such matrix factorization (SVD), in terms of key metrics like Precision, Recall, nDCG, Diversity, and Serendipity. By incorporating metadata — including attributes like game mechanics, themes, and complexity — our model provides more personalized and diverse recommendations that cater to the collective preferences of the group, rather than relying solely on individual user interactions.
 
-% \section{Figures}
+The results are consistent across different group formations, showing that the model is able to make recommendations based on the preferences of the group, and not on the preferences of the individual users. This is a key advantage of our system, as it ensures that the recommendations are tailored to the group as a whole, rather than to individual users.
 
-% You may want to include figures in the paper to illustrate your approach and results. Such artwork should be centered, legible, and separated from the text. Lines should be dark and at least 0.5~points thick for purposes of reproduction, and text should not appear on a gray background.
+The results also highlight the value of metadata in enhancing recommendation accuracy, ensuring greater variety and novelty in the suggested games, and improving the overall user experience. Our method not only improves the quality of recommendations but also addresses the challenge of recommending games for groups with diverse preferences. 
 
-% Label all distinct components of each figure. If the figure takes the form of a graph, then give a name for each axis and include a legend that briefly describes each curve. Do not include a title inside the figure; instead, the caption should serve this function.
+This work shows that metadata-based group recommendation systems can be an effective way to make recommendations for board games, especially with low computational power available. The robustness and scalability of the proposed system indicate its potential for application in other domains requiring group-based recommendations, such as tourism, movies, or event planning, assuming the metadata is available.
 
-%Number figures sequentially, placing the figure number and caption \emph{after} the graphics, with at least 0.1~inches of space before
+\section{Future work}
 
-%You may float figures to the top or bottom of a column, and you may set wide figures across both columns (use the environment \texttt{figure*} in \LaTeX). Always place two-column figures at the top or bottom of the page.
+Since this project was done with a reduced dataset, the obvious step would be to scale it up to the full dataset or at least a bigger portion of it with improved computation power. This would allow for more accurate results and a more robust set of models.
 
+Another step would be to improve the group formation algorithm, as it is currently based on the preferences of the users, and not on the characteristics of the games they play (it does not use the available metadata). This could be done by using a clustering algorithm to group the games based on their characteristics, and then grouping the users based on the games they have interacted with. Future work could also use a hybrid approach, where part of how the groups are formed is random and another part is based on the similarity of the users.
 
-% Ejemplo de algoritmo (creo que no usaremos esto)
-% \begin{algorithm}[tb]
-%    \caption{Bubble Sort}
-%    \label{alg:example}
-% \begin{algorithmic}
-%    \STATE {\bfseries Input:} data $x_i$, size $m$
-%    \REPEAT
-%    \STATE Initialize $noChange = true$.
-%    \FOR{$i=1$ {\bfseries to} $m-1$}
-%    \IF{$x_i > x_{i+1}$}
-%    \STATE Swap $x_i$ and $x_{i+1}$
-%    \STATE $noChange = false$
-%    \ENDIF
-%    \ENDFOR
-%    \UNTIL{$noChange$ is $true$}
-% \end{algorithmic}
-% \end{algorithm}
+Additionally, a notable drawback of this work is the lack of inclusion of the baseline "AGREE" recommended by the course instructors of IIC3633. Since the dataset selection process was finalized late in the development of this work, this implementation was not completed.
 
-
-% Ejemplo de tabla
-% \begin{table}[t]
-% \caption{Classification accuracies for naive Bayes and flexible
-% Bayes on various data sets.}
-% \label{sample-table}
-% \vskip 0.15in
-% \begin{center}
-% \begin{small}
-% \begin{sc}
-% \begin{tabular}{lcccr}
-% \toprule
-% Data set & Naive & Flexible & Better? \\
-% \midrule
-% Breast    & 95.9$\pm$ 0.2& 96.7$\pm$ 0.2& $\surd$ \\
-% Cleveland & 83.3$\pm$ 0.6& 80.0$\pm$ 0.6& $\times$\\
-% Glass2    & 61.9$\pm$ 1.4& 83.8$\pm$ 0.7& $\surd$ \\
-% Credit    & 74.8$\pm$ 0.5& 78.3$\pm$ 0.6&         \\
-% Horse     & 73.3$\pm$ 0.9& 69.7$\pm$ 1.0& $\times$\\
-% Meta      & 67.1$\pm$ 0.6& 76.5$\pm$ 0.5& $\surd$ \\
-% Pima      & 75.1$\pm$ 0.6& 73.9$\pm$ 0.5&         \\
-% Vehicle   & 44.9$\pm$ 0.6& 61.5$\pm$ 0.4& $\surd$ \\
-% \bottomrule
-% \end{tabular}
-% \end{sc}
-% \end{small}
-% \end{center}
-% \vskip -0.1in
-% \end{table}
-
-% \subsection{Citations and References}
-
-% Please use APA reference format regardless of your formatter
-% or word processor. If you rely on the \LaTeX\/ bibliographic
-% facility, use \texttt{natbib.sty} and \texttt{icml2021.bst}
-% included in the style-file package to obtain this format.
-
-% Citations within the text should include the authors' last names and
-% year. If the authors' names are included in the sentence, place only
-% the year in parentheses using yrcite.
-
-% Alphabetize references by the surnames of the first authors, with
-% single author entries preceding multiple author entries. Order
-% references for the same authors by year of publication, with the
-% earliest first. Make sure that each reference includes all relevant
-% information (e.g., page numbers).
-
-% Please put some effort into making references complete, presentable, and
-% consistent. If using bibtex, please protect capital letters of names and
-% abbreviations in titles, for example, use \{B\}ayesian or \{L\}ipschitz
-% in your .bib file.
-
-
-% In the unusual situation where you want a paper to appear in the
-% references without citing it in the main text, use \nocite
-% \nocite{}
+Finally, there is exploration to do regarding the use of the least misery and dictatorship aggregation functions, as well as the use of other aggregation functions that could be more suitable for group recommendations. This could be done by comparing the results of the different aggregation functions and selecting the one that provides the best recommendations. This barely didnt make it into the project, and could easily be implemented in the future.
 
 \bibliography{main}
 \bibliographystyle{icml2021}
