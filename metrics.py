@@ -144,7 +144,7 @@ def calculate_group_metrics(parsed_data, train_df, k=5, threshold=5):
     return avg_metrics
 
 
-sampling_method = "itemsaaaample"   # ["itemsaaaample", "lastsaaaample"] escoger una
+sampling_method = "itemsample"   # ["itemsample", "lastsample"] escoger una
 
 test_df = pd.read_csv(f'recommendations/{sampling_method}/test.csv')
 groups_df = pd.read_csv(f'recommendations/{sampling_method}/random_group_recommendations.csv')
