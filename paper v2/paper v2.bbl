@@ -1,14 +1,34 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{4}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem[Engo(2024)]{richengo2024}
-Engo, R.
-\newblock Board-games-recommender, 2024.
+\bibitem[{BoardGameGeek}(2024)]{boardgamegeek}
+{BoardGameGeek}.
+\newblock Boardgamegeek: The world’s largest board game database, 2024.
+\newblock URL \url{https://boardgamegeek.com}.
+\newblock Accesed december 7th 2024.
+
+\bibitem[Ngo(2021)]{richengo2024}
+Ngo, R.
+\newblock Board-games-recommender, 2021.
 \newblock URL \url{https://github.com/richengo/Board-Games-Recommender}.
-\newblock Accedido el 7 de diciembre de 2024.
+\newblock Accesed december 7th 2024.
+
+\bibitem[Peska et~al.(2023)Peska, Antonetti, et~al.]{group_recommenders_repo}
+Peska, L., Antonetti, L., et~al.
+\newblock Group recommenders: Offline evaluation, 2023.
+\newblock URL
+  \url{https://github.com/barnap/group-recommenders-offline-evaluation}.
+\newblock Accesed december 7th 2024.
+
+\bibitem[Wadkins(2023)]{board_games_kaggle}
+Wadkins, J.
+\newblock Board games database from boardgamegeek, 2023.
+\newblock URL
+  \url{https://www.kaggle.com/datasets/threnjen/board-games-database-from-boardgamegeek}.
+\newblock Accesed december 7th 2024.
 
 \end{thebibliography}

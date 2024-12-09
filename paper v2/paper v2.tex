@@ -26,39 +26,39 @@
 \begin{document}
 
 \twocolumn[
-\icmltitle{Board games group recomendation using metadata}
+    \icmltitle{Board games group recomendation using metadata}
 
-% It is OKAY to include author information, even for blind
-% submissions: the style file will automatically remove it for you
-% unless you've provided the [accepted] option to the icml2021
-% package.
+    % It is OKAY to include author information, even for blind
+    % submissions: the style file will automatically remove it for you
+    % unless you've provided the [accepted] option to the icml2021
+    % package.
 
-% List of affiliations: The first argument should be a (short)
-% identifier you will use later to specify author affiliations
-% Academic affiliations should list Department, University, City, Region, Country
-% Industry affiliations should list Company, City, Region, Country
+    % List of affiliations: The first argument should be a (short)
+    % identifier you will use later to specify author affiliations
+    % Academic affiliations should list Department, University, City, Region, Country
+    % Industry affiliations should list Company, City, Region, Country
 
-% You can specify symbols, otherwise they are numbered in order.
-% Ideally, you should not use this facility. Affiliations will be numbered
-% in order of appearance and this is the preferred way.
-\icmlsetsymbol{equal}{*}
+    % You can specify symbols, otherwise they are numbered in order.
+    % Ideally, you should not use this facility. Affiliations will be numbered
+    % in order of appearance and this is the preferred way.
+    \icmlsetsymbol{equal}{*}
 
-\begin{icmlauthorlist}
-\icmlauthor{Eduardo Salinas}{to}
-\icmlauthor{Alfonso Badilla}{to}
-\icmlauthor{Nicolás Gutiérrez}{to}
-\end{icmlauthorlist}
+    \begin{icmlauthorlist}
+        \icmlauthor{Eduardo Salinas}{to}
+        \icmlauthor{Alfonso Badilla}{to}
+        \icmlauthor{Nicolás Gutiérrez}{to}
+    \end{icmlauthorlist}
 
-\icmlaffiliation{to}{Department of Computation, Pontificia Universidad Católica de Chile, Santiago, Chile}
+    \icmlaffiliation{to}{Department of Computation, Pontificia Universidad Católica de Chile, Santiago, Chile}
 
-\icmlcorrespondingauthor{Eduardo Salinas}{esalinasbarros@uc.cl}
-\icmlcorrespondingauthor{Alfonso Badilla}{alfonso.badilla@uc.cl}
-\icmlcorrespondingauthor{Nicolás Gutiérrez}{njgutierrez@uc.cl}
+    \icmlcorrespondingauthor{Eduardo Salinas}{esalinasbarros@uc.cl}
+    \icmlcorrespondingauthor{Alfonso Badilla}{alfonso.badilla@uc.cl}
+    \icmlcorrespondingauthor{Nicolás Gutiérrez}{njgutierrez@uc.cl}
 
-% You may provide any keywords that you find helpful for describing your paper; these are used to populate the "keywords" metadata in the PDF but will not be shown in the document
-\icmlkeywords{Machine Learning, ICML, Group recommendation, Metadata}
+    % You may provide any keywords that you find helpful for describing your paper; these are used to populate the "keywords" metadata in the PDF but will not be shown in the document
+    \icmlkeywords{Machine Learning, ICML, Group recommendation, Metadata}
 
-\vskip 0.3in
+    \vskip 0.3in
 ]
 
 % this must go after the closing bracket ] following \twocolumn[ ...
@@ -72,23 +72,22 @@
 \printAffiliationsAndNotice{} % otherwise use the standard text.
 
 \begin{abstract}
-In this document we propose a group recommendation system for board games using data from the Board Game Geek website, which includes attributes such as the number of players, average playtime, complexity, and user ratings.
-% todo: agregar explicación groso modo del algoritmo
-The implementation employs Python and the scikit-learn library, offering an efficient and scalable solution for group-based game recommendations.
+    In this document we propose a group recommendation system for board games using data from the Board Game Geek website, which includes attributes such as the number of players, average playtime, complexity, and user ratings.
+    % todo: agregar explicación groso modo del algoritmo
+    The implementation employs Python and the scikit-learn library, offering an efficient and scalable solution for group-based game recommendations.
 \end{abstract}
 
 \section{Motivation and state of the art}
 
-Board games have been a popular form of entertainment for centuries, and their popularity has only increased in recent years. Even as digital games have become more prevalent, board games have remained a favorite pastime for many people, and the market for board games has grown significantly giving rise to plataforms such as Board Game Geek (BGG). This website is a popular platform for board game enthusiasts, where users can rate and review games, as well as access information about them.
+Board games have been a popular form of entertainment for centuries, and their popularity has only increased in recent years. Even as digital games have become more prevalent, board games have remained a favorite pastime for many people, and the market for board games has grown significantly giving rise to plataforms such as Board Game Geek\footnote{\cite{boardgamegeek}} (BGG). This website is a popular platform for board game enthusiasts, where users can rate and review games, as well as access information about them.
 
 \subsection{State of the art and related work}
 
-This plataform has a vast amount of data that has been used in the past to create recommendation systems. For example, 
-github user richengo \cite{richengo2024} proposed a recommendation system for board games based on user ratings, using a collaborative filtering approach. However, this approach does not take into account the characteristics of many of the games, that are supposed to be played in groups. As such, we propose a group recommendation system to make recommendations tailored to groups of players.
+This plataform has a vast amount of data that has been used in the past to create recommendation systems. For example,
+github user richengo \yrcite{richengo2024} proposed a recommendation system for board games based on user ratings, using a collaborative filtering approach. However, this approach does not take into account the characteristics of many of the games, that are supposed to be played in groups. As such, we propose a group recommendation system to make recommendations tailored to groups of players.
 
-Another example of group recommendation systems is the work of %\cite{DBLP:journals/corr/abs-2006-07053}
-, who proposed a group recommendation system for tourism and movies\footnote{This work is hosted on a github repo and is intended to be used as a basic tutorial.}.
-This system uses regular clustering algorithms to group users based on their ratings, such as user k-nearest, item k-nearest and support vector decomposition, and then recommends movies and touristic locations based on the preferences of the group. 
+Another example of group recommendation systems is the work of \cite{group_recommenders_repo}, who proposed a group recommendation system for tourism and movies\footnote{This work is hosted on a github repo and is intended to be used as a basic tutorial.}.
+This system uses regular clustering algorithms to group users based on their ratings, such as user k-nearest, item k-nearest and support vector decomposition (SVD), and then recommends movies and touristic locations based on the preferences of the group.
 
 \subsection{Proposal}
 
@@ -96,7 +95,7 @@ We propose a refined version of that last system, using metadata-centric cluster
 
 \section{Data analysis}
 
-The dataset that will be used for this project has 10 different files, each one tith different information about board games. The main file is \texttt{user\_ratings.csv}, which contains 19 million rows. Due to the limited processing power of Google Collab and our own local machines, we will use a reduced set of items and users for this work. The other files are:
+The dataset that will be used for this project\footnote{\cite{board_games_kaggle}}, obtained from the website kaggle, has 10 different files, each one tith different information about board games. The main file is \texttt{user\_ratings.csv}, which contains 19 million rows. Due to the limited processing power of Google Collab and our own local machines, we will use a reduced set of items and users for this work. The other files are:
 
 \begin{itemize}
     \item \texttt{games.csv}: This file contains 22 attributes about the rated games and includes 22,000 different games. Among the attributes, we have aspects such as the game description, which could be evaluated using language models, the year of publication (which distributes as shown in figure \ref{fig:publishYear}), the average rating received, among others.
@@ -107,7 +106,7 @@ The dataset that will be used for this project has 10 different files, each one 
     \item \texttt{artists\_reduced.csv}: Contains information about which artist created a certain game in binary flag format. Only artists with more than 3 games created will be considered.
     \item \texttt{designer\_reduced.csv}: Contains information about which designer designed a certain game in binary flag format. Only designers with more than 3 games created are considered.
     \item \texttt{publishers\_reduced.csv}: Contains information about the companies that sell these games in binary flag format. Only companies that sell more than 3 games are considered.
-    
+
 \end{itemize}
 
 \begin{figure}
@@ -140,7 +139,7 @@ The dataset that will be used for this project has 10 different files, each one 
 
 \section{Methodology}
 
-The methodology for this project is divided into three main stages: data preprocessing, group making, and recommendation. 
+The methodology for this project is divided into three main stages: data preprocessing, group making, and recommendation.
 
 \subsection{Data preprocessing}
 The first stage consists of reducing the dataset by not picking items without interactions and then dividing the...
@@ -159,7 +158,7 @@ The second stage consists of grouping the users based on their characteristics b
 
 
 \subsection{Recommendation}
-The third stage consists of recommending games to groups of players based on their preferences. Since the recommendations are supposed to be made to groups, the preferences of the group are calculated using a variety of methods, that can be described as follows: 
+The third stage consists of recommending games to groups of players based on their preferences. Since the recommendations are supposed to be made to groups, the preferences of the group are calculated using a variety of methods, that can be described as follows:
 \begin{enumerate}
     \item Simple average: The preferences of the group are calculated as the simple average of the preferences of the individual players.
     \item Least misery: The preferences of the group are calculated as the minimum of the preferences of the individual players.
@@ -267,26 +266,7 @@ included in the style-file package to obtain this format.
 
 Citations within the text should include the authors' last names and
 year. If the authors' names are included in the sentence, place only
-the year in parentheses, for example when referencing Arthur Samuel's
-pioneering work \yrcite{Samuel59}. Otherwise place the entire
-reference in parentheses with the authors and year separated by a
-comma \cite{Samuel59}. List multiple references separated by
-semicolons \cite{kearns89,Samuel59,mitchell80}. Use the `et~al.'
-construct only for citations with three or more authors or after
-listing all authors to a publication in an earlier reference \cite{MachineLearningI}.
-
-Authors should cite their own work in the third person
-in the initial version of their paper submitted for blind review.
-Please refer to Section~\ref{author info} for detailed instructions on how to
-cite your own papers.
-
-Use an unnumbered first-level section heading for the references, and use a
-hanging indent style, with the first line of the reference flush against the
-left margin and subsequent lines indented by 10 points. The references at the
-end of this document give examples for journal articles \cite{Samuel59},
-conference publications \cite{langley00}, book chapters \cite{Newell81}, books
-\cite{DudaHart2nd}, edited volumes \cite{MachineLearningI}, technical reports
-\cite{mitchell80}, and dissertations \cite{kearns89}.
+the year in parentheses using yrcite.
 
 Alphabetize references by the surnames of the first authors, with
 single author entries preceding multiple author entries. Order
@@ -302,7 +282,7 @@ in your .bib file.
 
 % In the unusual situation where you want a paper to appear in the
 % references without citing it in the main text, use \nocite
-\nocite{langley00}
+% \nocite{}
 
 \bibliography{main}
 \bibliographystyle{icml2021}
