@@ -1,15 +1,15 @@
 # Fdb version 3
-["bibtex paper v2"] 1733693392 "paper v2.aux" "paper v2.bbl" "paper v2" 1733693392
+["bibtex paper v2"] 1733704986 "paper v2.aux" "paper v2.bbl" "paper v2" 1733704986
   "./icml2021.bst" 1732923513 27147 754d35bad1e0551f1b55824eb3875247 ""
-  "example_paper.bib" 0 -1 0 ""
-  "paper v2.aux" 1733693347 1390 d501658bfe2f596c04a00d615b767f5d "pdflatex"
+  "main.bib" 1733704985 220 1064dbd10d2f032189daf46c434e92b7 ""
+  "paper v2.aux" 1733704986 1427 89f5f9f0b0f9ca5beb12cc26a82b4ecd "pdflatex"
   (generated)
   "paper v2.bbl"
   "paper v2.blg"
-["pdflatex"] 1733693346 "/home/nico/sysrec/RecSysProyectoFinal/paper v2/paper v2.tex" "paper v2.pdf" "paper v2" 1733693392
+["pdflatex"] 1733704985 "/home/nico/sysrec/RecSysProyectoFinal/paper v2/paper v2.tex" "paper v2.pdf" "paper v2" 1733704986
   "/etc/texmf/web2c/texmf.cnf" 1730669674 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/nico/.texlive2021/texmf-var/web2c/pdftex/pdflatex.fmt" 1730679348 1405755 41d785b8e3ac52dd524d1268b05cb20d ""
-  "/home/nico/sysrec/RecSysProyectoFinal/paper v2/paper v2.tex" 1733693383 16007 55dc2501f085fd998107898267c3fe67 ""
+  "/home/nico/sysrec/RecSysProyectoFinal/paper v2/paper v2.tex" 1733704902 15998 3829be276b07be8f7e55d15428d24142 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm" 1136768653 960 379cc0019370a9e0208a0a3f949f847a ""
@@ -122,10 +122,10 @@
   "fancyhdr.sty" 1732923613 20521 e5d13d98d57bd53d4fed3aa61bd29c86 ""
   "icml2021.sty" 1732923427 27174 ab30649a6169102389fe194b6304d846 ""
   "mecanicasComunes.png" 1732929337 96719 3bdc16d345dcd4a11190c75fb533b791 ""
-  "paper v2.aux" 1733693347 1390 d501658bfe2f596c04a00d615b767f5d "pdflatex"
-  "paper v2.bbl" 0 -1 0 "bibtex paper v2"
-  "paper v2.out" 1733693346 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "paper v2.tex" 1733693383 16007 55dc2501f085fd998107898267c3fe67 ""
+  "paper v2.aux" 1733704986 1427 89f5f9f0b0f9ca5beb12cc26a82b4ecd "pdflatex"
+  "paper v2.bbl" 1733704986 480 cb29836bb4c7086d1fe0b98398270995 "bibtex paper v2"
+  "paper v2.out" 1733704985 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "paper v2.tex" 1733704902 15998 3829be276b07be8f7e55d15428d24142 ""
   "publishYear.png" 1732929337 50095 2ec340d6e630a936a78a69e4c7501b58 ""
   "tematicasComunes.png" 1732929337 77363 bc8d8c7f58db7e7ba561660f99142b43 ""
   (generated)

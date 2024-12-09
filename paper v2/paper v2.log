@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.11.3)  8 DEC 2024 18:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.11.3)  8 DEC 2024 21:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -409,9 +409,6 @@ Underfull \hbox (badness 6542) in paragraph at lines 72--72
 \OT1/ptm/m/n/9 (+20) de Chile, San-ti-ago, Chile. Cor-re-spon-dence to: Ed-
  []
 
-
-Package natbib Warning: Citation `richengo2024' on page 1 undefined on input line 87.
-
 LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 99.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
@@ -433,17 +430,17 @@ Underfull \hbox (badness 1231) in paragraph at lines 107--108
 
 
 ]
-<publishYear.png, id=30, 939.51pt x 582.175pt>
+<publishYear.png, id=33, 939.51pt x 582.175pt>
 File: publishYear.png Graphic file (type png)
 <use publishYear.png>
 Package pdftex.def Info: publishYear.png  used on input line 115.
 (pdftex.def)             Requested size: 187.90271pt x 116.43294pt.
-<distribucionRatings.png, id=31, 966.61125pt x 566.115pt>
+<distribucionRatings.png, id=34, 966.61125pt x 566.115pt>
 File: distribucionRatings.png Graphic file (type png)
 <use distribucionRatings.png>
 Package pdftex.def Info: distribucionRatings.png  used on input line 122.
 (pdftex.def)             Requested size: 187.90271pt x 110.04213pt.
-<tematicasComunes.png, id=32, 939.51pt x 717.68124pt>
+<tematicasComunes.png, id=35, 939.51pt x 717.68124pt>
 File: tematicasComunes.png Graphic file (type png)
 <use tematicasComunes.png>
 Package pdftex.def Info: tematicasComunes.png  used on input line 129.
@@ -452,7 +449,7 @@ Package pdftex.def Info: tematicasComunes.png  used on input line 129.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<mecanicasComunes.png, id=33, 939.51pt x 791.95876pt>
+<mecanicasComunes.png, id=36, 939.51pt x 791.95876pt>
 File: mecanicasComunes.png Graphic file (type png)
 <use mecanicasComunes.png>
 Package pdftex.def Info: mecanicasComunes.png  used on input line 136.
@@ -529,7 +526,22 @@ LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
 
 Package natbib Warning: Citation `langley00' undefined on input line 305.
 
-No file "paper v2".bbl.
+(./paper v2.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 9--13
+[]\OT1/ptm/m/n/10 (+20) Engo, R.  Board-games-recommender, 2024.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--13
+\OT1/ptm/m/n/10 (+20) URL [][]$\OT1/pcr/m/n/10 https : / / github . com / richengo /
+ []
+
+
+Underfull \hbox (badness 2790) in paragraph at lines 9--13
+\OT1/pcr/m/n/10 Board-[]Games-[]Recommender$[][]\OT1/ptm/m/n/10 (+20) .  Ac-ce-dido el 7
+ []
+
+)
 
 Package natbib Warning: There were undefined citations.
 
@@ -541,18 +553,18 @@ Package rerunfilecheck Info: File `"paper v2".out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 12146 strings out of 480247
- 193377 string characters out of 5896106
- 526735 words of memory out of 5000000
- 29677 multiletter control sequences out of 15000+600000
- 497977 words of font info for 180 fonts, out of 8000000 for 9000
+ 12158 strings out of 480247
+ 193541 string characters out of 5896106
+ 527057 words of memory out of 5000000
+ 29682 multiletter control sequences out of 15000+600000
+ 498096 words of font info for 182 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  60i,11n,69p,1054b,431s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on "paper v2.pdf" (3 pages, 289339 bytes).
+Output written on "paper v2.pdf" (3 pages, 290626 bytes).
 PDF statistics:
- 103 PDF objects out of 1000 (max. 8388607)
- 75 compressed objects within 1 object stream
- 26 named destinations out of 1000 (max. 500000)
+ 109 PDF objects out of 1000 (max. 8388607)
+ 81 compressed objects within 1 object stream
+ 28 named destinations out of 1000 (max. 500000)
  52757 words of extra memory for PDF output out of 61914 (max. 10000000)
 
