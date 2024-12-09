@@ -10,4 +10,4 @@
 *.pdf
 *.blg
 *.bbl
-*.gz
+*.synctex.gz

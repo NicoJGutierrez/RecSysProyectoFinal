@@ -293,9 +293,15 @@ However, for new users, the results might not be as expected. The user needs to 
 
 \section{Conclusions}
 
-In this work, we presented a novel approach to group-based board game recommendations by leveraging both user ratings and game metadata. Our system outperforms traditional recommendation models, such matrix factorization (SVD), in terms of key metrics like Precision, Recall, nDCG, Diversity, and Serendipity. By incorporating metadata — including attributes like game mechanics, themes, and complexity — our model provides more personalized and diverse recommendations that cater to the collective preferences of the group, rather than relying solely on individual user interactions.
+In this work, we proposed a group recommendation system for board games using metadata from the Board Game Geek website. The system uses a LightFM model to make recommendations based on the preferences of the group. 
 
-The results highlight the value of metadata in enhancing recommendation accuracy, ensuring greater variety and novelty in the suggested games, and improving the overall user experience. Our method not only improves the quality of recommendations but also addresses the challenge of recommending games for groups with diverse preferences. The robustness and scalability of the proposed system indicate its potential for application in other domains requiring group-based recommendations, such as tourism, movies, or event planning.
+Our system outperforms traditional recommendation models, such matrix factorization (SVD), in terms of key metrics like Precision, Recall, nDCG, Diversity, and Serendipity. By incorporating metadata — including attributes like game mechanics, themes, and complexity — our model provides more personalized and diverse recommendations that cater to the collective preferences of the group, rather than relying solely on individual user interactions.
+
+The results are consistent across different group formations, showing that the model is able to make recommendations based on the preferences of the group, and not on the preferences of the individual users. This is a key advantage of our system, as it ensures that the recommendations are tailored to the group as a whole, rather than to individual users.
+
+The results also highlight the value of metadata in enhancing recommendation accuracy, ensuring greater variety and novelty in the suggested games, and improving the overall user experience. Our method not only improves the quality of recommendations but also addresses the challenge of recommending games for groups with diverse preferences. 
+
+This work shows that metadata-based group recommendation systems can be an effective way to make recommendations for board games, especially with low computational power available. The robustness and scalability of the proposed system indicate its potential for application in other domains requiring group-based recommendations, such as tourism, movies, or event planning, assuming the metadata is available.
 
 \section{Future work}
 
