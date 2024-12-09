@@ -655,16 +655,6 @@ INPUT /usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.st
 INPUT /usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 INPUT /usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
-INPUT ./paper v2.out
-INPUT paper v2.out
-INPUT ./paper v2.out
-INPUT paper v2.out
-INPUT ./paper v2.out
-INPUT paper v2.out
-INPUT ./paper v2.out
-INPUT paper v2.out
-INPUT ./paper v2.out
-INPUT ./paper v2.out
 OUTPUT paper v2.out
 OUTPUT paper v2.pdf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
@@ -723,6 +713,8 @@ INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmri7t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/courier/pcrr7t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/courier/pcrr8r.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmr8c.vf
@@ -747,25 +739,51 @@ INPUT ./mecanicasComunes.png
 INPUT mecanicasComunes.png
 INPUT ./mecanicasComunes.png
 INPUT ./mecanicasComunes.png
-INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmro7t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmro8r.tfm
-INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
-INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
-INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
-INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
+INPUT ./ReviewsPorJuego.png
+INPUT ./ReviewsPorJuego.png
+INPUT ReviewsPorJuego.png
+INPUT ./ReviewsPorJuego.png
+INPUT ./ReviewsPorJuego.png
+INPUT ./reviewsPorUsuario.png
+INPUT ./reviewsPorUsuario.png
+INPUT reviewsPorUsuario.png
+INPUT ./reviewsPorUsuario.png
+INPUT ./reviewsPorUsuario.png
+INPUT ./reviewsPorUsuario2.png
+INPUT ./reviewsPorUsuario2.png
+INPUT reviewsPorUsuario2.png
+INPUT ./reviewsPorUsuario2.png
+INPUT ./reviewsPorUsuario2.png
+INPUT ./reviewsPorUsuarioFinal.png
+INPUT ./reviewsPorUsuarioFinal.png
+INPUT reviewsPorUsuarioFinal.png
+INPUT ./reviewsPorUsuarioFinal.png
+INPUT ./reviewsPorUsuarioFinal.png
+INPUT ./ReviewsPorJuegoFinal.png
+INPUT ./ReviewsPorJuegoFinal.png
+INPUT ReviewsPorJuegoFinal.png
+INPUT ./ReviewsPorJuegoFinal.png
+INPUT ./ReviewsPorJuegoFinal.png
 INPUT ./paper v2.bbl
 INPUT paper v2.bbl
 INPUT ./paper v2.bbl
 INPUT paper v2.bbl
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmri7t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmri7t.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
 INPUT paper v2.aux
 INPUT ./paper v2.out
 INPUT ./paper v2.out
 INPUT /usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb
-INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb
